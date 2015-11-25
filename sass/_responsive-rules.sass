@@ -1,0 +1,29 @@
+$mobile-width: 700px
+$small-width:900px
+$medium-width:1200px
+$large-width: 1440px
+$xlarge-width:1800px
+
+=mobile 
+	@media (max-width:$mobile-width) 
+		@content
+
+=tablet 
+	@media (max-width:$small-width) 
+		@content
+
+=bigtablet 
+	@media (max-width:$medium-width)
+		@content
+
+=laptop 
+	@media (max-width:$large-width) 
+		@content
+
+=desktop 
+	@media (min-width: $large-width) 
+		@content
+
+=giant 
+	@media (min-width: $xlarge-width) 
+		@content
