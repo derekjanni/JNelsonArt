@@ -1,15 +1,12 @@
 <div class="main">
-  <div class="container">
+    <div class="container">
 
-    <h2>Recent Photos</h2>
-    <div class="row">
-      <div class="item col-md-4" ng-repeat="photo in photos">
-        <a href="#/photos/{{$index}}">
-          <img class="img-responsive" ng-src="{{ photo['data'].image }}">
+            <div class="series-item" ng-repeat="photo in photos | limitTo:4">
+                <a href="#/photos/{{$index}}">
+                    <img class="img-responsive" ng-src="{{ photo['data'].image }}">
           <p class="author">Click Here! {{ photo['data'].title }}</p>
-        </a>
-      </div>
+                </a>
+            </div>
+            <div class="see-more"><span >see more!</span></div>
     </div>
-
-  </div>
 </div>
