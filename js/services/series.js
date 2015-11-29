@@ -1,4 +1,4 @@
-app.factory('photos', ['$http', function($http) {
+app.factory('series', ['$http', function($http) {
   return $http.get('http://www.joynelson.com/cockpit/rest/api/galleries/get/Series?token=25a01fb2eb534c8830882257') 
           .success(function(data) {
             // modify image path to usable url
