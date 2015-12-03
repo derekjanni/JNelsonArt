@@ -1,5 +1,5 @@
 <div class="series-container">
-    <div class="series-item" ng-repeat="serie in series">
+    <div class="series-item" ng-repeat="serie in series | limitTo: feedLimit">
     	<div class="flip-container">
 	        <div class="front">
 	        	<img class="img-responsive" ng-src="{{ serie['data'].image }}">
