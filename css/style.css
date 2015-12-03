@@ -27,20 +27,33 @@ h6 {
   position: relative;
   float: right; }
 
+.series-container {
+  display: flex;
+  height: 95vh; }
+
 .series-item {
+  position: relative;
   cursor: pointer;
+  width: 25%;
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; }
+  .series-item p.author {
+    color: #000;
+    padding: 24px;
+    text-align: left; }
+  .series-item img.img-resopnsive {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%; }
 
 .series-item:hover {
   background: #000;
   text-decoration: none;
   transition: background 500ms; }
-
-p.author {
-  color: #000;
-  padding: 24px;
-  text-align: left; }
 
 .series-item:hover p.author, .series-item:hover a {
   color: #fff;

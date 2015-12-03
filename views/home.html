@@ -1,12 +1,9 @@
-<div class="main">
-    <div class="container">
-
-            <div class="series-item" ng-repeat="serie in series | limitTo:4">
-                <a href="#/series/{{$index}}">
-                    <img class="img-responsive" ng-src="{{ serie['data'].image }}">
-          <p class="author">Click Here! {{ serie['data'].title }}</p>
-                </a>
-            </div>
-            <div class="see-more"><span >see more!</span></div>
+    <div class="series-container">
+        <div class="series-item" ng-repeat="serie in series | limitTo:4">
+            <!-- <a href="#/series/{{$index}}"> -->
+                <img class="img-responsive" ng-src="{{ serie['data'].image }}">
+      		<!-- 	<p class="author">Click Here! {{ serie['data'].title }}</p>
+            </a> -->
+        </div>
     </div>
-</div>
+    <div class="see-more"><span >see more!</span></div>
