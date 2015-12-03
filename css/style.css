@@ -28,8 +28,19 @@ h6 {
   float: right; }
 
 .series-container {
+  height: 95vh;
+  overflow-y: hidden;
   display: flex;
-  height: 95vh; }
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  align-items: flex-start;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  height: 95vh;
+  transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
+  transform-style: preserve-3d; }
 
 .series-item {
   position: relative;
@@ -37,23 +48,27 @@ h6 {
   width: 25%;
   margin: 0;
   padding: 0;
-  display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; }
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 0, 0.25, 1);
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+    -webkit-backface-visibility-backface-visibility: hidden; }
   .series-item p.author {
     color: #000;
     padding: 24px;
     text-align: left; }
   .series-item img.img-resopnsive {
-    flex-shrink: 0;
     min-width: 100%;
     min-height: 100%; }
 
 .series-item:hover {
   background: #000;
   text-decoration: none;
-  transition: background 500ms; }
+  transition: background 500ms;
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
 
 .series-item:hover p.author, .series-item:hover a {
   color: #fff;
