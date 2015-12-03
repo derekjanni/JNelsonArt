@@ -44,7 +44,6 @@ h6
 .series-container 
   //layout and flexhbox stuff
   height: 95vh
-  overflow-y: hidden
   display: flex
   display: -webkit-flex
   display: flex
@@ -54,10 +53,6 @@ h6
   -webkit-flex-flow: row wrap
   flex-flow: row wrap
   height: 95vh
-  //begin transformation stuff
-  
-  transition: all 0.5s cubic-bezier(0,0,0.25,1)
-  transform-style: preserve-3d
 .series-item 
   position: relative
   cursor: pointer
@@ -67,29 +62,34 @@ h6
   justify-content: center
   align-items: center
   overflow: hidden
-  transition: all 0.5s cubic-bezier(0,0,0.25,1)
-  transform-style: preserve-3d
-  -webkit-backface-visibility: hidden /* Chrome, Safari, Opera */
-    backface-visibility: hidden
-  p.author 
-    color: #000
-    padding: 24px
-    text-align: left
-  img.img-resopnsive
-    min-width: 100%
-    min-height: 100%
-    
-    // object-fit: cover
-    
-.series-item:hover 
-  background: #000 
-  text-decoration: none
-  transition: background 500ms
+  perspective: 1000
+  .flip-container 
+    transition: all 0.5s cubic-bezier(0,0,0.25,1)
+    transform-style: preserve-3d
+    position: relative
+    .front, .back 
+      width: 100%
+      backface-visibility: hidden
+
+    .front
+      transform: rotateY(0deg)
+      z-index: 2
+    .back 
+      transform: rotateY(180deg)
+      position: absolute
+      top: 0
+.series-item:hover .flip-container
   -webkit-transform: rotateY(180deg)
   transform: rotateY(180deg)
+p.author 
+  color: #000
+  padding: 24px
+  text-align: left
+img.img-responsive
+  min-width: 100%
+  min-height: 100%
 
 .series-item:hover p.author, .series-item:hover a 
-  color: #fff
   text-decoration: none
 //
 //
