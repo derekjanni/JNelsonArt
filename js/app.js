@@ -7,19 +7,16 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/home.html' 
     }) 
     .when('/series/:id',{
-	    // Todo: edit to series/art framework
-      controller: 'PhotoController',
+      controller: 'SerieController',
       templateUrl: 'views/serie.html'
   })
      .when('/contact',{
-	     // Todo: make Contact controller
        controller: 'ContactController',
-       templateUrl: 'contact.html'
+       templateUrl: 'views/contact.html'
   })
      .when('/about',{
-	     // Todo: make about controller
       controller: 'AboutController',
-      templateUrl: 'contact.html'
+      templateUrl: 'views/about.html'
   })
     .otherwise({ 
       redirectTo: '/' 
