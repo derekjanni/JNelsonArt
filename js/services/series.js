@@ -11,9 +11,8 @@ app.factory('series', ['$http', function($http) {
             for (i = 0; i < data.length; i++){
               json_data.push(data[i]['data'])
             }
-
-	          return data;
-	         })
+	    return data;
+	    })
           .error(function(data) {
             return data;
            });
