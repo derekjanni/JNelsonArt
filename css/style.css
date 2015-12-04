@@ -17,13 +17,24 @@ h5,
 h6 {
   font-family: "Roboto", sans-serif; }
 
+.wrapper {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 10px;
+  border-style: solid;
+  border-width: 156px 188px 146px 139px;
+  -moz-border-image: url("../img/borders.svg") 274 331 328 314 stretch;
+  -webkit-border-image: url("../img/borders.svg") 274 331 328 314 stretch;
+  -o-border-image: url("../img/borders.svg") 274 331 328 314 stretch;
+  border-image: url("../img/borders.svg") 274 331 328 314 stretch; }
+
 .header img {
   margin: 0 20px 0 0;
-  height: 80px;
-  width: 80px; }
+  height: auto;
+  width: 20vw; }
 
 .view {
-  width: 80vw;
+  width: 70vw;
   position: relative;
   float: right; }
 
@@ -31,7 +42,6 @@ h6 {
   height: 95vh;
   display: flex;
   display: -webkit-flex;
-  display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
   align-items: flex-start;
@@ -82,7 +92,7 @@ img.img-responsive {
 
 .nav {
   position: relative;
-  width: 20vw;
+  width: 15vw;
   float: left; }
   .nav ul {
     list-style-type: none; }
