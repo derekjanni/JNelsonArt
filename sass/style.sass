@@ -2,45 +2,32 @@
 @import responsive-rules
 
 html, body
-  background: #fff
   margin: 0
   padding: 0
 
-a,
-li,
-p,
-span
-  font-family: $body-font
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-  font-family: $header-font
 .wrapper
   width: 100vw
   min-height: 100vh
-  padding: 10px
+  padding: -300px
   border-style: solid
-  border-width: 156px 188px 146px 139px
-  -moz-border-image: url('../img/borders.svg') 274 331 328 314 stretch
-  -webkit-border-image: url('../img/borders.svg') 274 331 328 314 stretch
-  -o-border-image: url('../img/borders.svg') 274 331 328 314 stretch
-  border-image: url('../img/borders.svg') 274 331 328 314 stretch
+  box-sizing: border-box
+  border-width: 50px
+  -moz-border-image: url('../img/borders.svg') 274 331 328 314 repeat
+  -webkit-border-image: url('../img/borders.svg') 274 331 328 314 repeat
+  -o-border-image: url('../img/borders.svg') 274 331 328 314 repeat
+  border-image: url('../img/borders.svg') 274 331 328 314 repeat
 
 //
 //
-//  END includes and basic rules
+//  END includes and wrapper layout
 //  
 //  BEGIN header
 //
 //
-.header img
-  margin: 0 20px 0 0
-  height: auto
-  width: 20vw
+  // .header img
+  //   margin: 0 20px 0 0
+  //   height: auto
+  //   width: 20vw
 //
 //
 //  END header
@@ -49,7 +36,7 @@ h6
 //
 //
 .view 
-  width: 70vw
+  width: 80%
   position: relative
   float: right
 .series-container 
@@ -110,10 +97,17 @@ img.img-responsive
 //
 .nav 
   position: relative
-  width: 15vw
+  width: 20%
   float: left
+  box-sizing: border-box
+  padding: 20px
   ul
     list-style-type: none
+  a
+    text-decoration: none
+  li
+    text-align: right
+
 
 //
 //

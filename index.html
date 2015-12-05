@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,300' rel='stylesheet' type='text/css'>
     <link href="css/style.css" rel="stylesheet" />
     <!-- Include the core AngularJS library -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
@@ -18,15 +17,11 @@
                 <a href="/#/">
                     <img src="img/logo-vector.svg">
                 </a>
-                <div class="container">
-                    <a href="/">Home</a>
-                </div>
-                <div class="container">
-                    <a href="/about">About</a>
-                </div>
-                <div class="container">
-                    <a href="/contact">Contact</a>
-                </div>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
             </div>
         </div>
         <div class="view" ng-view></div>

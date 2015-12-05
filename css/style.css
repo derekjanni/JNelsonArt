@@ -1,13 +1,13 @@
-html, body {
-  background: #fff;
-  margin: 0;
-  padding: 0; }
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300);
+body {
+  background: ghostwhite; }
 
 a,
 li,
 p,
 span {
-  font-family: "Helvetica", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 200; }
 
 h1,
 h2,
@@ -15,26 +15,27 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300; }
+
+html, body {
+  margin: 0;
+  padding: 0; }
 
 .wrapper {
   width: 100vw;
   min-height: 100vh;
-  padding: 10px;
+  padding: -300px;
   border-style: solid;
-  border-width: 156px 188px 146px 139px;
-  -moz-border-image: url("../img/borders.svg") 274 331 328 314 stretch;
-  -webkit-border-image: url("../img/borders.svg") 274 331 328 314 stretch;
-  -o-border-image: url("../img/borders.svg") 274 331 328 314 stretch;
-  border-image: url("../img/borders.svg") 274 331 328 314 stretch; }
-
-.header img {
-  margin: 0 20px 0 0;
-  height: auto;
-  width: 20vw; }
+  box-sizing: border-box;
+  border-width: 50px;
+  -moz-border-image: url("../img/borders.svg") 274 331 328 314 repeat;
+  -webkit-border-image: url("../img/borders.svg") 274 331 328 314 repeat;
+  -o-border-image: url("../img/borders.svg") 274 331 328 314 repeat;
+  border-image: url("../img/borders.svg") 274 331 328 314 repeat; }
 
 .view {
-  width: 70vw;
+  width: 80%;
   position: relative;
   float: right; }
 
@@ -92,10 +93,16 @@ img.img-responsive {
 
 .nav {
   position: relative;
-  width: 15vw;
-  float: left; }
+  width: 20%;
+  float: left;
+  box-sizing: border-box;
+  padding: 20px; }
   .nav ul {
     list-style-type: none; }
+  .nav a {
+    text-decoration: none; }
+  .nav li {
+    text-align: right; }
 
 .serie {
   margin: 0 0 80px; }
