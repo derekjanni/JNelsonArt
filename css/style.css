@@ -1,7 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300);
-body {
-  background: ghostwhite; }
-
 a,
 li,
 p,
@@ -18,6 +15,9 @@ h6 {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300; }
 
+body {
+  background: floralwhite; }
+
 html, body {
   margin: 0;
   padding: 0; }
@@ -28,11 +28,11 @@ html, body {
   padding: -300px;
   border-style: solid;
   box-sizing: border-box;
-  border-width: 50px;
-  -moz-border-image: url("../img/borders.svg") 274 331 328 314 repeat;
-  -webkit-border-image: url("../img/borders.svg") 274 331 328 314 repeat;
-  -o-border-image: url("../img/borders.svg") 274 331 328 314 repeat;
-  border-image: url("../img/borders.svg") 274 331 328 314 repeat; }
+  border-width: 100px;
+  -moz-border-image: url("../img/borders.svg") 281 285 269 296 repeat;
+  -webkit-border-image: url("../img/borders.svg") 281 285 269 296 repeat;
+  -o-border-image: url("../img/borders.svg") 281 285 269 296 repeat;
+  border-image: url("../img/borders.svg") 281 285 269 296 repeat; }
 
 .view {
   width: 80%;
@@ -54,6 +54,7 @@ html, body {
   position: relative;
   cursor: pointer;
   width: 25%;
+  height: 50vh;
   margin: 0;
   padding: 0;
   justify-content: center;
