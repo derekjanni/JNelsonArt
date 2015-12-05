@@ -3,8 +3,7 @@ app.controller('HomeController', ['$scope', 'series', function($scope, series) {
     $scope.series = data;
     $scope.feedLimit = 4;
     $scope.scroll = function() { 
-	$scope.feedLimit += 4; 
+		$scope.feedLimit += 4; 
     };
-
     });
 }]);

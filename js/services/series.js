@@ -5,13 +5,7 @@ app.factory('series', ['$http', function($http) {
             for (i = 0; i < data.length; i++){ 
               data[i]['data']['image'] = data[i]['data']['image'].replace('site:', 'http://joynelson.com/')
             }
-            
-            // transform goofy JSON inputs into usable JSON
-            json_data = []
-            for (i = 0; i < data.length; i++){
-              json_data.push(data[i]['data'])
-            }
-	    return data;
+	          return data;
 	    })
           .error(function(data) {
             return data;

@@ -1,15 +1,19 @@
 <head>
     <meta charset="utf-8">
-
-    <base href="/">
 </head>
 
 <div class="serie">
   <div class="container">
-    <img ng-src="{{ detail.url }}">
-    <h2 class="serie-artiststatement"> artist statement: {{ detail['data'].statement }} </h2>
-    <p class="serie-views"> price:  {{ detail['data'].price }} </p>
-    <p class="serie-pubdate"> date: {{ detail['data'].date }} </p>
-    <h1>Halloooo</h1>
-  </div>
+  	<title class="serie-title"> {{ detail['data'].title }} </title>
+  	<h1 class="serie-title"> {{ detail['data'].title }} </h1>
+    <img class="serie-masterimage" ng-src="{{ detail['data'].image }}">
+    <p class="serie-artiststatement"> <b> artist statement:  </b>{{ detail['data'].statement }} </p>
+    <p class="serie-views">	<b> price: </b> {{ detail['data'].price }} </p>
+    <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
+		</div>
+      <div class="series-item" ng-repeat="art in get_arts() | limitTo: 8">
+      		</p> {{ art }} <p>
+<!--  		<img class="serie-masterimage" ng-src="{{ detail['data'].image }}">
+ -->
+</div>
 </div>
