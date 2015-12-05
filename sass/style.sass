@@ -1,5 +1,6 @@
 @import responsive-rules
 @import fonts-and-colors
+@import animations
 
 html, body
   margin: 0
@@ -8,9 +9,9 @@ html, body
 .wrapper
   width: 100vw
   min-height: 100vh
-  
 
-
+i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
+  color: rgba(200,200,200,1)
 //
 //
 //  END includes and wrapper layout
@@ -69,8 +70,6 @@ html, body
     -moz-border-radius: 100px
     -webkit-border-radius: 100px
     border-radius: 100px
-    &:hover
-      color: rgba(200,200,200,1)
     
 .series-item 
   position: relative
@@ -83,8 +82,11 @@ html, body
   align-items: center
   overflow: hidden
   perspective: 1000
+  +bigtablet
+    width: 50%
   +tablet
     width: 100%
+
   .series-flip-container 
     transition: all 0.5s cubic-bezier(0,0,0.25,1)
     transform-style: preserve-3d
@@ -114,7 +116,13 @@ img
   min-width: 100%
   min-height: 100%
 
-
+.expanded, .expanded > *
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 100
+  width: 80vw
+  height: 100vh
 //
 //
 //  END home/gallery
