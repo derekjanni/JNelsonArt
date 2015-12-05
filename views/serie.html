@@ -11,9 +11,8 @@
         <p class="serie-views"> <b> price: </b> {{ detail['data'].price }} </p>
         <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
     </div>
-    <div class="series-item" ng-repeat="art in get_arts() | limitTo: 8">
-        </p> {{ art }}
-        <p>
+    <div class="series-item" ng-repeat="art in arts | limitTo: 8">
+        </p> {{ art }} <p>
             <!--  		<img class="serie-masterimage" ng-src="{{ detail['data'].image }}">
  -->
     </div>
