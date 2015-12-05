@@ -1,17 +1,17 @@
 <div class="series-container">
     <div class="series-item" ng-repeat="serie in series | limitTo: feedLimit">
-    	<div class="flip-container">
-	        <div class="front">
-	        	<img class="img-responsive" ng-src="{{ serie['data'].image }}">
-	        </div>
-	        <div class="back">
-	            <a href="/series/{{$index}}">
-	                <p class="author">{{ serie['data'].title }}</p>
-
-	            </a>
-	        </div>
+        <div class="series-flip-container">
+            <div class="front">
+                <img ng-src="{{ serie['data'].image }}">
+            </div>
+            <div class="back">
+                <a href="/series/{{$index}}">
+                    <p class="author">{{ serie['data'].title }}</p>
+                </a>
+            </div>
         </div>
     </div>
-    <div>
-        <button class="see-more" ng-click="scroll()">Show More</button>
+    <div class="series-see-more">
+        <button ng-click="scroll()"><i class="fa fa-arrow-down"></i></button>
     </div>
+</div>
