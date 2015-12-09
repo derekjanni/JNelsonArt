@@ -15,7 +15,7 @@ app.config(function ($routeProvider) {
        templateUrl: 'views/contact.html'
   })
      .when('/about',{
-      controller: 'AboutController',
+      controller: 'HomeController',
       templateUrl: 'views/about.html'
   })
     .otherwise({ 

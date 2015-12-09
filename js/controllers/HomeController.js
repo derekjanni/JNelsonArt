@@ -1,4 +1,4 @@
-app.controller('HomeController', ['$scope', 'series', function($scope, series) {
+app.controller('HomeController', ['$scope', 'series', '$http', function($scope, series, $http) {
     series.success(function(data) {
         $scope.series = data;
         $scope.seriesLength = $scope.series.length;
@@ -10,5 +10,17 @@ app.controller('HomeController', ['$scope', 'series', function($scope, series) {
                 $scope.feedLimit -= 4;
             }
         };
+        $scope.get_about = function(){
+            return $http.get('http://www.joynelson.com/cockpit/rest/api/collections/get/about?token=25a01fb2eb534c8830882257')
+            .success(function(data) {
+                // modify image path to usable url
+                console.log(data[0]['about_text']);
+                $scope.about = data[0]['about_text'];
+            })
+              .error(function(data) {
+                return data;
+               });;
+            }
+        $scope.about = $scope.get_about();
     });
 }]);
