@@ -7,7 +7,9 @@ app.controller('SerieController', ['$scope', 'series', '$http', '$routeParams', 
     	.success(function(data) {
             // modify image path to usable url
             for (i = 0; i < data.length; i++){ 
-              		data[i]['data']['image'] = data[i]['data']['image'].replace('site:', 'http://joynelson.com/')
+                if($scope.detail['data'].title == data[i]['data'].series){
+              		data[i]['data']['image'] = data[i]['path'].replace('site:', 'http://joynelson.com/');
+              }
             }	
 	         $scope.arts = data;
 	    })
@@ -16,6 +18,5 @@ app.controller('SerieController', ['$scope', 'series', '$http', '$routeParams', 
            });;
 		}
 	$scope.arts = $scope.get_arts();
-	console.log($scope.arts);
 	});	
 }]);
