@@ -12,6 +12,20 @@ html, body
 
 i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   color: rgba(200,200,200,1)
+
+.clearfix:before,
+.clearfix:after 
+  content: ""
+  display: table
+
+
+.clearfix:after 
+  clear: both
+
+
+.clearfix 
+  zoom: 1
+
 //
 //
 //  END includes and wrapper layout
@@ -38,15 +52,12 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   border-style: solid
   box-sizing: border-box
   border-width: 100px
-  -moz-border-image: url('../img/borders.svg') 281 285 269 296 stretch
-  -webkit-border-image: url('../img/borders.svg') 281 285 269 296 stretch
-  -o-border-image: url('../img/borders.svg') 281 285 269 296 stretch
-  border-image: url('../img/borders.svg') 281 285 269 296 stretch
+  -moz-border-image: url('../img/borders.svg') 281 285 269 296 repeat
+  -webkit-border-image: url('../img/borders.svg') 281 285 269 296 repeat
+  -o-border-image: url('../img/borders.svg') 281 285 269 296 repeat
+  border-image: url('../img/borders.svg') 281 285 269 296 repeat
   +tablet
     width: 100%
-
-.view > *
-  margin: -50px
 
 .series-container 
   //layout and flexhbox stuff
@@ -58,6 +69,7 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   align-items: flex-start
   -webkit-flex-flow: row wrap
   flex-flow: row wrap
+  justify-content: center
 
 .series-see-more
   width: 100%
@@ -76,16 +88,16 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   cursor: pointer
   width: 25%
   height: 50vh
-  margin: 0  
+  margin: 0 0 20px 0
   padding: 0
-  justify-content: center
-  align-items: center
   overflow: hidden
   perspective: 1000
   +bigtablet
     width: 50%
+    margin: 0
   +tablet
     width: 100%
+    margin: 0
 
   .series-flip-container 
     transition: all 0.5s cubic-bezier(0,0,0.25,1)
@@ -98,10 +110,12 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
     .front
       transform: rotateY(0deg)
       z-index: 2
+
     .back 
       transform: rotateY(180deg)
       position: absolute
       top: 0
+      text-align: center
       background: rgba(150,150,150,.5)
       height: 100%
 
@@ -170,3 +184,74 @@ img
   margin: 0
   padding: 0 108px 0
 
+//
+//
+//  END art page
+//  
+//  BEGIN contact
+//
+//
+.row 
+  height: auto
+  padding-bottom: 10px
+  border-bottom: dotted #333 1px
+
+.contact-info
+  display: flex
+  justify-content: space-around
+  span:after
+    content: '\a0'
+
+.contact-social
+  float: right
+  width: 40%
+  display: block
+  &>i
+    font-size: 2em
+    &:after
+      content: '\a0'
+  .fa-facebook
+    color: #3B5998
+  .fa-google-plus
+    color: #dd4b39
+  .fa-pinterest
+    color: #C92228
+
+.contact-or
+  float: left
+  width: 12%
+  // margin-top: 10%
+  margin-left: 4%
+  text-align: center
+  box-sizing: border-box
+  border: 2px solid #333
+  padding: -5px
+  -moz-border-radius: 1000px
+  -webkit-border-radius: 1000px
+  border-radius: 1000px
+  h1
+    font-weight: 700
+
+.contact-form
+  float: left
+  width: 40%
+  display: block
+  h2
+    text-align: right
+  input, textarea
+    width: 100%
+//
+//
+//  END contact
+//  
+//  BEGIN about
+//
+//
+
+//
+//
+//  END about
+//  
+//  BEGIN ????
+//
+//
