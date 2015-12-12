@@ -11,7 +11,7 @@ app.controller('HomeController', ['$scope', 'series', '$http', function($scope, 
             }
         };
         $scope.get_about = function(){
-            return $http.get('http://www.joynelson.com/cockpit/rest/api/collections/get/about?token=25a01fb2eb534c8830882257')
+            return $http.get('/api/about')
             .success(function(data) {
                 // modify image path to usable url
                 $scope.about = data[0];
@@ -21,7 +21,5 @@ app.controller('HomeController', ['$scope', 'series', '$http', function($scope, 
                });;
             }
         $scope.about = $scope.get_about();
-        console.log($scope.about);
-        //console.log($scope.about.image);
     });
 }]);

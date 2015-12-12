@@ -2,8 +2,7 @@ app.controller('SerieController', ['$scope', 'series', '$http', '$routeParams', 
   series.success(function(data) {
     $scope.detail = data[$routeParams.id];
     $scope.get_arts = function(){
-	  //  	return $http.get('http://www.joynelson.com/cockpit/rest/api/galleries/get/Art?token=25a01fb2eb534c8830882257')
-        return $http.get('/api/series')
+        return $http.get('/api/art')
 	.success(function(data) {
             // modify image path to usable url
             for (i = 0; i < data.length; i++){ 
