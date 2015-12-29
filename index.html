@@ -7,21 +7,22 @@
     <!-- Include the core AngularJS library -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
     <!-- Include the AngularJS routing library -->
-    
     <script src="//code.angularjs.org/1.3.5/angular-route.min.js"></script>
+
+    <base href ="/">
 
   </head>
   <body ng-app="GalleryApp">
     <div class="wrapper">
         <div class="nav">
             <div class="container">
-                <a href="/#/">
+                <a href="/">
                     <img src="img/logo-vector.svg">
                 </a>
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="#/about">About</a></li>
-                    <li><a href="#/contact">Contact</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -36,11 +37,8 @@
     <script src="js/controllers/HomeController.js"></script>
     <script src="js/controllers/SerieController.js"></script>
     <script src="js/controllers/AboutController.js"></script>
-
     <!-- Services -->
     <script src="js/services/series.js"></script>
-    <!-- jQuery UX stuff-->
-    <!--    <script src="js/ux.js"></script>-->
 </body>
 
 </html>

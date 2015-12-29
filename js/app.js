@@ -1,6 +1,6 @@
 var app = angular.module('GalleryApp', ['ngRoute','ngAnimate']);
 
-app.config(function ($routeProvider) { 
+app.config(function ($routeProvider, $locationProvider) { 
   $routeProvider 
     .when('/', { 
       controller: 'HomeController', 
@@ -21,7 +21,12 @@ app.config(function ($routeProvider) {
     .otherwise({ 
       redirectTo: '/' 
     }); 
+    
+    // use the HTML5 History API
+    $locationProvider.html5Mode(true);
       
 });
+
+
 
 
