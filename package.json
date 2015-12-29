@@ -1,0 +1,31 @@
+{
+  "name": "jnelsonart",
+  "version": "1.0.0",
+  "description": "\"website for local artist joy nelson\"",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "method-override": "^2.3.5",
+    "express": "^4.13.3",
+    "http": "^0.0.0",
+    "node-rest-client": "^1.5.1",
+    "connect": "^3.4.0",
+    "morgan": "^1.6.1",
+    "serve-static": "^1.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekjanni/JNelsonArt.git"
+  },
+  "author": "derek janni, makena johnson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derekjanni/JNelsonArt/issues"
+  },
+  "homepage": "https://github.com/derekjanni/JNelsonArt#readme"
+}
