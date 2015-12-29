@@ -1,5 +1,5 @@
 app.factory('arts', ['$http', function($http) {
-	    return $http.get('http://www.joynelson.com/cockpit/rest/api/galleries/get/Art?token=25a01fb2eb534c8830882257')
+	    return $http.get('/api/arts')
 		.success(function(data) {
 			// modify image path to usable url                                                                                                                         
 			for (i = 0; i < data.length; i++){
