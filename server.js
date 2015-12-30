@@ -5,6 +5,8 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var http = require('http');
 var Client = require('node-rest-client').Client; 
+var nodemailer = require('nodemailer');
+
 
 // API
 var express = require('express');
@@ -83,6 +85,30 @@ app.get('/api/about', function(req, res) {
 			});
 
 });
+
+app.post('/api/contact', function(req, res){
+	var transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'joy@gmail.com',
+        pass: 'secretpassword'
+    }
+}, {
+    // default values for sendMail method                                                                                                                                          
+    from: 'joy@gmail.com',
+    headers: {
+        'My-Awesome-Header': '123'
+    }
+});
+transporter.sendMail({
+    to: 'RECIPIENT@email.com',
+    subject: 'hello from nodemailer',
+    text: 'hello world!'
+});
+
+
+
+}
 // application -------------------------------------------------------------
 app.get('*', function(req, res) {
 	res.send('index.html'); // load the single view file (angular will handle the page changes on the front-end)
