@@ -34,11 +34,9 @@ app.controller('HomeController', ['$scope', 'series', '$http', function($scope, 
             })
             .error(function(data){ console.log("error") });
         }
-
         // contact form reset
         $scope.resetForm = function(){
-            $scope.model = '';
-            $scope.form.$setPristine(true);
+            //dammit
         }
     });
 }]);
