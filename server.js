@@ -4,8 +4,7 @@ var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var http = require('http');
-var Client = require('node-rest-client').Client; 
-
+var Client = require('node-rest-client').Client;
 // API
 var express = require('express');
 var app = express();

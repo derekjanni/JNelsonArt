@@ -1,3 +1,4 @@
+
 @import responsive-rules
 @import fonts-and-colors
 @import animations
@@ -44,20 +45,42 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 //  BEGIN home/gallery
 //
 //
-.view 
+.view, .border-top, .border-bottom
   width: 80%
-  min-height: 100vh
   position: relative
   float: right
-  border-style: solid
-  box-sizing: border-box
-  border-width: 100px
-  -moz-border-image: url('../img/borders.svg') 281 285 269 296 repeat
-  -webkit-border-image: url('../img/borders.svg') 281 285 269 296 repeat
-  -o-border-image: url('../img/borders.svg') 281 285 269 296 repeat
-  border-image: url('../img/borders.svg') 281 285 269 296 repeat
   +tablet
     width: 100%
+
+.border-top
+  box-sizing: border-box
+  border-style: solid
+  border-width: 289px 296px 27px 292px
+  -moz-border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
+  -webkit-border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
+  -o-border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
+  border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
+  display: block
+  position: relative
+  z-index: -1
+  height: 0
+
+.border-bottom
+  box-sizing: border-box
+  border-style: solid
+  border-width: 0px 296px 291px 292px
+  -moz-border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
+  -webkit-border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
+  -o-border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
+  border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
+
+.view 
+  min-height: 100vh
+  box-sizing: border-box
+  padding-left: 140px
+  padding-right: 140px
+  margin-top: -240px
+  margin-bottom: -240px
 
 .series-container 
   //layout and flexhbox stuff
@@ -126,9 +149,7 @@ p.author
   color: #000
   padding: 24px
   text-align: left
-img
-  min-width: 100%
-  min-height: 100%
+
 
 .expanded, .expanded > *
   position: fixed
@@ -161,7 +182,20 @@ img
     width: 100%
     top: 0
 
-
+.menu-icon
+  position: relative
+  text-align: right
+  font-size: 2em
+  line-height: 1em
+  +giant
+    display: none
+  +desktop
+    display: none
+  +laptop
+    display: none
+  +tablet
+    display: block
+  
 //
 //
 //  END nav
@@ -170,20 +204,23 @@ img
 //
 //
 .serie 
-  margin: 0 0 80px   
-
-.serie img 
-  width: 100%
+  margin: 0 0 80px 
+  width: 100%  
 
 .serie h2 
   color: #000
   padding: 20px 108px
 
-.serie p 
+.serie-body-text
+  width: 40%
+  float: right
   color: #6f6f6f
   margin: 0
-  padding: 0 108px 0
+  padding: 0 5% 0
 
+.serie-masterimage 
+  float: left
+  width: 50%
 //
 //
 //  END art page
