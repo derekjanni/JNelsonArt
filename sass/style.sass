@@ -31,19 +31,30 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   zoom: 1
 
 .fa 
-  transition: .2s color
+  transition: .2s color, .2s opacity
 .fa:hover
   opacity: .8
 .fa-facebook:hover, .fa-facebook-square:hover
   color: #3B5998
-.fa-google-plus:hover
-  color: #dd4b39
+.fa-google-plus-square:hover
+  color: #DC4E41
 .fa-pinterest:hover, .fa-pinterest-square:hover
   color: #C92228
 .fa-behance:hover 
   color: #1769ff
 .fa-twitter-square:hover
   color: #55acee
+
+.white-border
+  border: 5px white solid
+  -moz-border-radius: 3px
+  -webkit-border-radius: 3px
+  border-radius: 3px
+
+.divider-sm
+  position: relative
+  width: 45%
+  margin: 5px auto
 
 //
 //
@@ -95,12 +106,23 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 .view 
   min-height: 100vh
   box-sizing: border-box
-  padding: 140px
-  background-image: url('../img/borders-01.svg'), url('../img/borders-04.svg')
-  background-position: 0 0, 100% 100%
-  background-repeat: no-repeat, no-repeat
-  background-size: 15% 15%, 15% 15%
+  padding: 0 140px
 
+.top-border
+  position: absolute
+  z-index: 1050
+  top: 0
+  left: 20%
+  width: 200px
+  height: 200px
+  transform: scale(50%, 50%)
+  img
+    -webkit-clip-path: url(#svgPath)
+    clip-path: url(#svgPath)
+    width: 100%
+    height: 100%
+
+  
 .series-container 
   //layout and flexhbox stuff
   box-sizing: border-box
@@ -111,7 +133,8 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   align-items: flex-start
   -webkit-flex-flow: row wrap
   flex-flow: row wrap
-  justify-content: center
+  justify-content: left
+  padding-top: 50px
 
 .series-see-more
   width: 100%
@@ -128,48 +151,65 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 .series-item 
   position: relative
   cursor: pointer
-  width: 25%
-  height: 75vh
-  margin: 0 0 20px 0
-  padding: 0
+  width: 40%
+  height: 40vh
+  height: auto
   overflow: hidden
-  perspective: 1000
+
   +bigtablet
-    width: 50%
-    margin: 0
+    padding: 5px 2% 10px 2%
   +tablet
     width: 100%
     margin: 0
-
-  .series-flip-container 
-    transition: all 0.5s cubic-bezier(0,0,0.25,1)
-    transform-style: preserve-3d
+  img
+    display: inline-block
     position: relative
-    .front, .back 
-      width: 100%
-      backface-visibility: hidden
-
-    .front
-      transform: rotateY(0deg)
-      z-index: 2
-
-    .back 
-      transform: rotateY(180deg)
+    max-width: 600px
+    max-height: 40vh
+    top: 0
+    width: 95%
+    object-fit: cover
+    margin: 5px
+  &:hover .series-info
+    opacity: 1
+  .series-info
+    transition: opacity .2s
+    opacity: 0
+    position: absolute
+    max-width: 600px
+    max-height: 40vh
+    top: 0
+    width: 95%
+    height: 100%
+    object-fit: cover
+    border: 5px rgba(255,255,255,0) solid
+    -moz-border-radius: 3px
+    -webkit-border-radius: 3px
+    border-radius: 3px
+    margin: 5px
+    background: rgba(20,20,20,.3)
+    .title
+      color: $creme
+      font-weight: bold
+      position: relative
+      top: 2px
+      left: 5px
+    .statement
+      color: $creme
+      padding: 0 10%
+    .fa-arrow-right
       position: absolute
-      top: 0
-      text-align: center
-      background: rgba(150,150,150,.5)
-      height: 100%
+      bottom: 2%
+      right: 5% 
+      color: $creme
 
-.series-item:hover .series-flip-container
-  -webkit-transform: rotateY(180deg)
-  transform: rotateY(180deg)
+
+
 
 p.author 
   color: #000
   padding: 24px
   text-align: left
-
 
 .expanded, .expanded > *
   position: fixed
@@ -192,15 +232,20 @@ p.author
   box-sizing: border-box
   padding: 20px
   height: 100vh
-  -webkit-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
-  -moz-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
-  box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
-  shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%)
-  shape-margin: 20px
+  // -webkit-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
+  // -moz-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
+  // box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
+  background: $periwinkle
+  z-index: 100
   ul
     list-style-type: none
-  a
+  .main-nav a
     text-decoration: none
+    text-transform: lowercase
+    font-size: 1.2em
+    &:hover
+      font-weight: 700
+      color: $text-highlight
   li
     text-align: right
   +tablet
@@ -227,13 +272,15 @@ p.author
   position: absolute
   bottom: 0
 .social-media
-  width: 90%
+  width: 130%
   left: 5%
   right: 5%
-  margin-bottom: 20px
+  margin-bottom: 30px
   margin-top: 16px
-  text-align: center
+  text-align: left
+  position: relative
   i
+    position: relative
     font-size: 2em
   i:after
     content: '\a0'
@@ -243,8 +290,10 @@ p.author
     i
       font-size: 1em
 
+
 .headshot
   width: 100%
+
   .headshot-hover
     display: none
     position: absolute
@@ -255,13 +304,23 @@ p.author
     width: 90%
     left: 5%
     right: 5%
-    -moz-border-radius: 300px
-    -webkit-border-radius: 300px
-    border-radius: 300px
+    // -moz-border-radius: 300px
+    // -webkit-border-radius: 300px
+    // border-radius: 300px
     &:hover + .headshot-hover
       display: block
   +tablet
     display: none
+
+.nav-curve 
+  position: fixed
+  width: 200px
+  height: 500px
+  bottom: 0
+  left: 20%
+  background: url('../img/curvycorner.png')
+  z-index: 1
+
 //
 //
 //  END nav
@@ -270,7 +329,7 @@ p.author
 //
 //
 .serie 
-  margin: 0 0 80px 
+  padding: 80px 100px 100px 40px
   width: 100%  
 
 .serie h2 
@@ -287,6 +346,7 @@ p.author
 .serie-masterimage 
   float: left
   width: 50%
+  box-sizing: border-box
 //
 //
 //  END art page
