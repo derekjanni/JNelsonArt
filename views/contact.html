@@ -2,23 +2,28 @@
 <div class="row">
     <div class="contact-form">
         <h2>Send me an Email!</h2>
-        <form name="contactform" method="post" action="send_email.php">
-            <p>Name
-                <br>
-                <input id="name" type="text" name="name" />
+        <form name="form" novalidate>
+
+            <p>Name<br>
+                <input id="name" type="text" ng-model="mail.name"
+                ng-pattern="string" required ng-trim="false"> 
             </p>
-            <p>Email
-                <br>
-                <input id="email" type="text" name="email" />
+            <p>Email<br>
+                <input id="email" type="text" ng-model="mail.email"
+                ng-pattern="string" required ng-trim="false"> 
             </p>
-            <p>Tell me about
-                <br>
-                <input class="subject" type="text" name="subject" />
+            <p>Subject<br>
+                <input id="subject" type="text" ng-model="mail.subject"
+                ng-pattern="string" required ng-trim="false">             
             </p>
-            <p>
-                <textarea class="Message" name="Message" rows="5" cols="30">Specific Questions or Comments</textarea>
+            <p>Message
+                <textarea id="message" type="text" ng-model="mail.message"
+                ng-pattern="string" required ng-trim="false" rows="5" cols="30">
+                Specific Questions or Comments
+                </textarea>
             </p>
-            <input class="btn" type="submit" value="Send to Joy!" />
+
+            <input class="btn" type="submit" value="Send to Joy!" ng-click="sendMail(mail); resetForm()"/>
         </form>
     </div>
 
