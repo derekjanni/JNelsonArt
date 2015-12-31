@@ -28,15 +28,19 @@ app.controller('HomeController', ['$scope', 'series', '$http', function($scope, 
 
         // contact form mail handler
         $scope.sendMail = function(mail){
-            $http.post('api/contact', mail)
-            .success(function(data){
-                
-            })
-            .error(function(data){ console.log("error") });
+                if ($scope.contactform.$valid) {
+                        $http.post('api/contact', mail)
+                        .success(function(data){})
+                        .error(function(data){ console.log("error") });
+                    alert('Our form is amazing');
+                }
+                else{
+                    alert('Fill out the form before you submit!');
+                }
         }
         // contact form reset
-        $scope.resetForm = function(){
-            //dammit
-        }
+        resetForm = function(){
+        document.getElementById("contactform").reset();
+    }
     });
 }]);
