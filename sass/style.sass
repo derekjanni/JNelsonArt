@@ -6,10 +6,13 @@
 html, body
   margin: 0
   padding: 0
+  background-image: url('../img/paper-bg.png')
+  background-repeat: repeat
 
 .wrapper
   width: 100vw
   min-height: 100vh
+  height: 100%
 
 i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   color: rgba(200,200,200,1)
@@ -26,6 +29,21 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 
 .clearfix 
   zoom: 1
+
+.fa 
+  transition: .2s color
+.fa:hover
+  opacity: .8
+.fa-facebook:hover, .fa-facebook-square:hover
+  color: #3B5998
+.fa-google-plus:hover
+  color: #dd4b39
+.fa-pinterest:hover, .fa-pinterest-square:hover
+  color: #C92228
+.fa-behance:hover 
+  color: #1769ff
+.fa-twitter-square:hover
+  color: #55acee
 
 //
 //
@@ -52,35 +70,36 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   +tablet
     width: 100%
 
-.border-top
-  box-sizing: border-box
-  border-style: solid
-  border-width: 289px 296px 27px 292px
-  -moz-border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
-  -webkit-border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
-  -o-border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
-  border-image: url('../img/borders-top.svg') 289 296 27 292 stretch
-  display: block
-  position: relative
-  z-index: -1
-  height: 0
+// .border-top
+//   box-sizing: border-box
+//   border-style: solid
+//   border-width: 289px 296px 27px 292px
+//   -moz-border-image: url('../img/borders-top.svg') 289 296 27 292 repeat
+//   -webkit-border-image: url('../img/borders-top.svg') 289 296 27 292 repeat
+//   -o-border-image: url('../img/borders-top.svg') 289 296 27 292 repeat
+//   border-image: url('../img/borders-top.svg') 289 296 27 292 repeat
+//   display: block
+//   position: relative
+//   z-index: -1
+//   height: 0
 
-.border-bottom
-  box-sizing: border-box
-  border-style: solid
-  border-width: 0px 296px 291px 292px
-  -moz-border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
-  -webkit-border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
-  -o-border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
-  border-image: url('../img/borders-bottom.svg') 0 296 291 292 stretch
+// .border-bottom
+//   box-sizing: border-box
+//   border-style: solid
+//   border-width: 0px 296px 291px 292px
+//   -moz-border-image: url('../img/borders-bottom.svg') 0 296 291 292 repeat
+//   -webkit-border-image: url('../img/borders-bottom.svg') 0 296 291 292 repeat
+//   -o-border-image: url('../img/borders-bottom.svg') 0 296 291 292 repeat
+//   border-image: url('../img/borders-bottom.svg') 0 296 291 292 repeat
 
 .view 
   min-height: 100vh
   box-sizing: border-box
-  padding-left: 140px
-  padding-right: 140px
-  margin-top: -240px
-  margin-bottom: -240px
+  padding: 140px
+  background-image: url('../img/borders-01.svg'), url('../img/borders-04.svg')
+  background-position: 0 0, 100% 100%
+  background-repeat: no-repeat, no-repeat
+  background-size: 15% 15%, 15% 15%
 
 .series-container 
   //layout and flexhbox stuff
@@ -145,6 +164,7 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 .series-item:hover .series-flip-container
   -webkit-transform: rotateY(180deg)
   transform: rotateY(180deg)
+
 p.author 
   color: #000
   padding: 24px
@@ -166,11 +186,17 @@ p.author
 //
 //
 .nav 
-  position: relative
+  position: fixed
   width: 20%
   float: left
   box-sizing: border-box
   padding: 20px
+  height: 100vh
+  -webkit-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
+  -moz-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
+  box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%)
+  shape-margin: 20px
   ul
     list-style-type: none
   a
@@ -180,7 +206,9 @@ p.author
   +tablet
     position: relative
     width: 100%
+    height: auto
     top: 0
+    background: $periwinkle
 
 .menu-icon
   position: relative
@@ -195,7 +223,45 @@ p.author
     display: none
   +tablet
     display: block
-  
+.nav-bottom
+  position: absolute
+  bottom: 0
+.social-media
+  width: 90%
+  left: 5%
+  right: 5%
+  margin-bottom: 20px
+  margin-top: 16px
+  text-align: center
+  i
+    font-size: 2em
+  i:after
+    content: '\a0'
+  +tablet
+    width: 100%
+    left: 0
+    i
+      font-size: 1em
+
+.headshot
+  width: 100%
+  .headshot-hover
+    display: none
+    position: absolute
+    width: 100%
+    top: 50%
+    text-align: center
+  img, .headshot-hover
+    width: 90%
+    left: 5%
+    right: 5%
+    -moz-border-radius: 300px
+    -webkit-border-radius: 300px
+    border-radius: 300px
+    &:hover + .headshot-hover
+      display: block
+  +tablet
+    display: none
 //
 //
 //  END nav
@@ -239,42 +305,14 @@ p.author
   span:after
     content: '\a0'
 
-.contact-social
-  float: right
-  width: 40%
-  display: block
-  &>i
-    font-size: 2em
-    &:after
-      content: '\a0'
-  .fa-facebook
-    color: #3B5998
-  .fa-google-plus
-    color: #dd4b39
-  .fa-pinterest
-    color: #C92228
-
-.contact-or
-  float: left
-  width: 12%
-  // margin-top: 10%
-  margin-left: 4%
-  text-align: center
-  box-sizing: border-box
-  border: 2px solid #333
-  padding: -5px
-  -moz-border-radius: 1000px
-  -webkit-border-radius: 1000px
-  border-radius: 1000px
-  h1
-    font-weight: 700
-
 .contact-form
-  float: left
-  width: 40%
+  position: relative
+  width: 50%
+  left: 25%
+  right: 25%
   display: block
   h2
-    text-align: right
+    text-align: center
   input, textarea
     width: 100%
 //
