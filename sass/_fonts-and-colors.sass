@@ -1,8 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:700,200,300)
 
-$body-font: 'Source Sans Pro', sans-serif
-$header-font: 'Source Sans Pro', sans-serif
-$periwinkle: rgba(191,209,229,.6)
+$body-font: 'Roboto Slab', sans-serif
+$header-font: 'Libre Baskerville', sans-serif
+$periwinkle: rgba(240,247,250,.7)
+$creme: rgba(255,253,248,1)
+$text-highlight: green
 //
 //
 //  END imports/variables
@@ -15,7 +17,7 @@ li,
 p,
 span
   font-family: $body-font
-  font-weight: 200
+  font-weight: 300
   color: #111
 
 h1,
@@ -43,8 +45,9 @@ button
   left: 0
   bottom: 0
   z-index: -1
-  background: $periwinkle
+  background: linear-gradient(rgba(255,255,255,.25), rgba(255,255,255,.08))
   width: 20%
+  -webkit-clip-path: polygon(0 0, 10% 0, 60% 100%, 0 100%)
   +tablet
     position: absolute
     width: 100%

@@ -6,7 +6,7 @@
         <a href="/"><i class="fa fa-arrow-left fa-3x"></i></a>
         <title class="serie-title"> {{ detail['data'].title }} </title>
         <h1 class="serie-title"> {{ detail['data'].title }} </h1>
-        <img class="serie-masterimage" ng-src="{{ detail['data'].image }}">
+        <img class="serie-masterimage white-border" ng-src="{{ detail['data'].image }}">
         <div class="serie-body-text">
             <p class="serie-artiststatement"> <b> artist statement:  </b>{{ detail['data'].statement }} </p>
             <p class="serie-views"> <b> price: </b> {{ detail['data'].price }} </p>
@@ -14,6 +14,6 @@
         </div>
     </div>
     <div class="art-item" ng-repeat="art in arts | limitTo: 8">
- 		 <img ng-src="{{ art['data'].image }}">
+        <img ng-src="{{ art['data'].image }}">
     </div>
 </div>
