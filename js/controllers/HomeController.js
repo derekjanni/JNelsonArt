@@ -1,4 +1,4 @@
-app.controller('HomeController', ['$scope', 'series', '$http', function($scope, series, $http) {
+app.controller('HomeController', ['$scope', 'series', '$http', '$fancyModal', function($scope, series, $http, $fancyModal) {
     series.success(function(data) {
 
         // main series display
@@ -27,6 +27,11 @@ app.controller('HomeController', ['$scope', 'series', '$http', function($scope, 
         $scope.about = $scope.get_about();
 
         // contact form mail handler
+        $scope.open = function () {
+            console.log("hit");
+            //$fancyModal.open({ templateUrl: 'contact.html' });
+        };
+
         $scope.sendMail = function(mail){
                 if ($scope.contactform.$valid) {
                         $http.post('api/contact', mail)

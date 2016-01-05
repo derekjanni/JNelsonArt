@@ -1,4 +1,4 @@
-var app = angular.module('GalleryApp', ['ngRoute','ngAnimate']);
+var app = angular.module('GalleryApp', ['ngRoute','ngAnimate', 'vesparny.fancyModal']);
 
 app.config(function ($routeProvider, $locationProvider) { 
   $routeProvider 
