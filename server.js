@@ -13,7 +13,7 @@ var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'derekjanni@gmail.com',
-        pass: '---'
+        pass: '----'
     }
 }, {
     // default values for sendMail method

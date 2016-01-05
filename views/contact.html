@@ -21,7 +21,7 @@
                 ng-pattern="string" required ng-trim="false" rows="5" cols="30" ng-class"{'has-error' : contactform.message.$invalid || !contactform.message.$pristine }">
                 </textarea>
             </p>
-            <input class="btn" type="submit" value="Send to Joy!" ng-disabled="userForm.$invalid" onclick="resetForm()"/>
+            <input class="btn" type="submit" value="Send to Joy!" ng-disabled="userForm.$invalid" ng-click="$fancyModal.close()"/>
         </form>
     </div>
 

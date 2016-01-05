@@ -3,6 +3,7 @@
 
 <head>
     <link href="css/style.css" rel="stylesheet">
+    <link href="bower_components/angular-fancy-modal/dist/angular-fancy-modal.css">
     <link rel="stylesheet" href="css/jquery.modal.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Include the core AngularJS library -->
@@ -41,7 +42,7 @@
                     <a href="url"><i class="fa fa-2x fa-google-plus-square"></i></a>
                     <a href="url"><i class="fa fa-2x fa-behance"></i></a><a href="url"><i class="fa fa-2x fa-twitter-square"></i></a>
                     <a href="url"><i class="fa fa-2x fa-pinterest-square"></i></a>
-                    <a href="views/contact.html" rel="modal:open"><i class="fa fa-2x fa-envelope"></i></a>
+                    <a href="views/contact.html" ng-click="open()"><i class="fa fa-2x fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -63,6 +64,7 @@
     <script src="js/ux.js"></script>
     <script src="js/jquery.modal.min.js"></script>
     <script src="js/scrollreveal.js"></script>
+    <script src="bower_components/angular-fancy-modal/dist/angular-fancy-modal.js"></script>
 </body>
 
 </html>
