@@ -21,10 +21,4 @@ $(document).ready(function(){
 		});
 	}
 
-	//opens menu if desktop browser viewport width grows past 900px
-	$( window ).resize(function() {
-  		if ($( window ).width() > 900) {
-  			navUL.css('display','block');
-  		}
-	});
 });

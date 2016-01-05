@@ -12,7 +12,13 @@ html, body
   width: 100vw
   min-height: 100vh
   height: 100%
-
+//
+//
+//  END includes and wrapper layout
+//  
+//  BEGIN recyclable rules
+//
+//
 i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   color: rgba(200,200,200,1)
 
@@ -57,7 +63,7 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 
 //
 //
-//  END includes and wrapper layout
+//  END recycable rules
 //  
 //  BEGIN header
 //
@@ -105,7 +111,8 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 .view 
   min-height: 100vh
   box-sizing: border-box
-  padding: 0 140px
+  padding: 0 70px
+
 
 .top-border
   position: absolute
@@ -150,11 +157,10 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
 .series-item 
   position: relative
   cursor: pointer
-  width: 40%
-  height: 40vh
+  width: 50%
+  
   height: auto
   overflow: hidden
-
   +bigtablet
     padding: 5px 2% 10px 2%
   +tablet
@@ -231,17 +237,23 @@ p.author
   box-sizing: border-box
   padding: 20px
   height: 100vh
-  // -webkit-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
-  // -moz-box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
-  // box-shadow: 0 0 8px 1px rgba(0,0,0,.5)
   background: $periwinkle
   z-index: 100
-  ul
+  .main-nav 
     list-style-type: none
-  .main-nav a
-    text-decoration: none
-    text-transform: lowercase
-    font-size: 1.3em
+    +tablet
+      display: none
+    +bigtablet
+      display: none
+    +laptop
+      display: none
+    +desktop
+      display: none
+
+      a
+        text-decoration: none
+        text-transform: lowercase
+        font-size: 1.3em
     &:hover
       font-weight: 700
       color: $text-highlight
@@ -286,28 +298,35 @@ p.author
   +tablet
     width: 100%
     left: 0
+    top: 10px
     i
-      font-size: 1em
+      font-size: 1.75em
 
 
 .headshot
-  width: 100%
-
-  .headshot-hover
-    display: none
+  position: relative
+  margin-left: 40px
+  margin-bottom: 10px
+  border-radius: 3px
+  .headshot-img
+    width: 70%
+  .headshot-arrow
     position: absolute
-    width: 100%
-    top: 50%
-    text-align: center
-  img, .headshot-hover
-    width: 90%
-    left: 5%
-    right: 5%
-    // -moz-border-radius: 300px
-    // -webkit-border-radius: 300px
-    // border-radius: 300px
-    &:hover + .headshot-hover
-      display: block
+    bottom: 10px
+    right: 30%
+    color: $creme
+    transition: all .5s
+  .headshot-caption
+    display: inline
+    opacity: 0
+    transition: all .5s
+  &:hover > .headshot-arrow .headshot-caption
+    opacity: 1
+    margin: 0
+    float: left
+  
+
+  
   +tablet
     display: none
 
@@ -319,7 +338,12 @@ p.author
   left: 20%
   background: url('../img/curvycorner.png')
   z-index: 1
+  +tablet
+    display: none
 
+.nav-divider 
+  +tablet
+    display: none
 //
 //
 //  END nav

@@ -175,7 +175,7 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover {
 .view {
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 0 140px; }
+  padding: 0 70px; }
 
 .top-border {
   position: absolute;
@@ -218,8 +218,7 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover {
 .series-item {
   position: relative;
   cursor: pointer;
-  width: 40%;
-  height: 40vh;
+  width: 50%;
   height: auto;
   overflow: hidden; }
   @media (max-width: 1200px) {
@@ -293,13 +292,25 @@ p.author {
   height: 100vh;
   background: rgba(240, 247, 250, 0.7);
   z-index: 100; }
-  .nav ul {
+  .nav .main-nav {
     list-style-type: none; }
-  .nav .main-nav a {
-    text-decoration: none;
-    text-transform: lowercase;
-    font-size: 1.3em; }
-    .nav .main-nav a:hover {
+    @media (max-width: 900px) {
+      .nav .main-nav {
+        display: none; } }
+    @media (max-width: 1200px) {
+      .nav .main-nav {
+        display: none; } }
+    @media (max-width: 1440px) {
+      .nav .main-nav {
+        display: none; } }
+    @media (min-width: 1440px) {
+      .nav .main-nav {
+        display: none; }
+        .nav .main-nav a {
+          text-decoration: none;
+          text-transform: lowercase;
+          font-size: 1.3em; } }
+    .nav .main-nav:hover {
       font-weight: 700;
       color: green; }
   .nav li {
@@ -350,24 +361,32 @@ p.author {
   @media (max-width: 900px) {
     .social-media {
       width: 100%;
-      left: 0; }
+      left: 0;
+      top: 10px; }
       .social-media i {
-        font-size: 1em; } }
+        font-size: 1.75em; } }
 
 .headshot {
-  width: 100%; }
-  .headshot .headshot-hover {
-    display: none;
+  position: relative;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  border-radius: 3px; }
+  .headshot .headshot-img {
+    width: 70%; }
+  .headshot .headshot-arrow {
     position: absolute;
-    width: 100%;
-    top: 50%;
-    text-align: center; }
-  .headshot img, .headshot .headshot-hover {
-    width: 90%;
-    left: 5%;
-    right: 5%; }
-    .headshot img:hover + .headshot-hover, .headshot .headshot-hover:hover + .headshot-hover {
-      display: block; }
+    bottom: 10px;
+    right: 30%;
+    color: #fffdf8;
+    transition: all 0.5s; }
+  .headshot .headshot-caption {
+    display: inline;
+    opacity: 0;
+    transition: all 0.5s; }
+  .headshot:hover > .headshot-arrow .headshot-caption {
+    opacity: 1;
+    margin: 0;
+    float: left; }
   @media (max-width: 900px) {
     .headshot {
       display: none; } }
@@ -380,6 +399,13 @@ p.author {
   left: 20%;
   background: url("../img/curvycorner.png");
   z-index: 1; }
+  @media (max-width: 900px) {
+    .nav-curve {
+      display: none; } }
+
+@media (max-width: 900px) {
+  .nav-divider {
+    display: none; } }
 
 .serie {
   padding: 80px 100px 100px 40px;
