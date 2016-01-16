@@ -374,6 +374,7 @@ p.author {
   .headshot .headshot-img {
     width: 70%; }
   .headshot .headshot-arrow {
+    text-decoration: none;
     position: absolute;
     bottom: 10px;
     right: 30%;
@@ -383,7 +384,7 @@ p.author {
     display: inline;
     opacity: 0;
     transition: all 0.5s; }
-  .headshot:hover > .headshot-arrow .headshot-caption {
+  .headshot:hover .headshot-arrow .headshot-caption {
     opacity: 1;
     margin: 0;
     float: left; }
@@ -448,5 +449,27 @@ p.author {
     text-align: center; }
   .contact-form input, .contact-form textarea {
     width: 100%; }
+
+.fake-modal .background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.5);
+  z-index: 100; }
+.fake-modal .content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: #ffffff;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 150; }
 
 /*# sourceMappingURL=style.css.map */

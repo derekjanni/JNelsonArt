@@ -2,7 +2,7 @@
 <div class="row" controller="HomeController">
     <div class="contact-form">
         <h2>Send me an Email!</h2>
-        <form name="contactform" id="contactform" ng-submit="sendMail(mail)" novalidate>
+        <form name="contactform" id="contactform" method="post" action="send_email.php">
             <p>Name<br>
                 <input id="name" type="text" ng-model="mail.name"
                 ng-pattern="string" required ng-trim="false" ng-class"{'has-error' : contactform.name.$invalid || !contactform.name.$pristine }"> 
@@ -20,7 +20,7 @@
                 ng-pattern="string" required ng-trim="false" rows="5" cols="30" ng-class"{'has-error' : contactform.message.$invalid || !contactform.message.$pristine }">
                 </textarea>
             </p>
-            <input class="btn" type="submit" value="Send to Joy!" ng-disabled="userForm.$invalid"/>
+            <input class="btn" type="submit" value="Send to Joy!"/>
         </form>
     </div>
 

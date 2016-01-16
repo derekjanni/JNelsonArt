@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	
+
 	var navIcon = $('.menu-icon');
 	var navUL = $('.nav').find('ul');
 	var navLI = navUL.find('li');

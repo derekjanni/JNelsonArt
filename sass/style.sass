@@ -311,6 +311,7 @@ p.author
   .headshot-img
     width: 70%
   .headshot-arrow
+    text-decoration: none
     position: absolute
     bottom: 10px
     right: 30%
@@ -320,7 +321,7 @@ p.author
     display: inline
     opacity: 0
     transition: all .5s
-  &:hover > .headshot-arrow .headshot-caption
+  &:hover .headshot-arrow .headshot-caption
     opacity: 1
     margin: 0
     float: left
@@ -370,6 +371,11 @@ p.author
   float: left
   width: 50%
   box-sizing: border-box
+
+
+
+
+
 //
 //
 //  END art page
@@ -402,14 +408,29 @@ p.author
 //
 //  END contact
 //  
-//  BEGIN about
+//  BEGIN mail-modal
 //
 //
-
-//
-//
-//  END about
-//  
-//  BEGIN ????
-//
-//
+.fake-modal
+  .background
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    width: 100vw
+    height: 100vh
+    background: rgba(10,10,10,.5)
+    z-index: 100
+  .content
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    width: 400px
+    background: #ffffff
+    -moz-border-radius: 5px    
+    -webkit-border-radius: 5px   
+    border-radius: 5px  
+    z-index: 150 
+    

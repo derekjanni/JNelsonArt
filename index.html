@@ -50,12 +50,46 @@
                     <a href="url"><i class="fa fa-2x fa-google-plus-square"></i></a>
                     <a href="url"><i class="fa fa-2x fa-behance"></i></a><a href="url"><i class="fa fa-2x fa-twitter-square"></i></a>
                     <a href="url"><i class="fa fa-2x fa-pinterest-square"></i></a>
-                    <a href="views/contact.html" rel="modal:open"><i class="fa fa-2x fa-envelope"></i></a>
+                    <a href="#" onclick="fakeModalOpen()"><i class="fa fa-2x fa-envelope"></i></a>
                 </div>
             </div>
         </div>
         <div class="nav-curve"></div>
-        <div class="view fade" ng-view></div>
+        <div class="view fade" ng-view></div>\
+        <div class="fake-modal">
+            <div class="background"></div>
+            <div class="content">
+                <div controller="HomeController">
+                    <div class="contact-form">
+                        <h2>Send me an Email!</h2>
+                        <form name="contactform" id="contactform" ng-submit="sendMail(mail)" novalidate>
+                            <p>Name
+                                <br>
+                                <input id="name" type="text" ng-model="mail.name" ng-pattern="string" required ng-trim="false" ng-class "{'has-error' : contactform.name.$invalid || !contactform.name.$pristine }">
+                            </p>
+                            <p>Email
+                                <br>
+                                <input id="email" type="email" ng-model="mail.email" ng-pattern="string" required ng-trim="false" ng-class "{'has-error' : contactform.email.$invalid || !contactform.email.$pristine }">
+                            </p>
+                            <p>Tell Me About...
+                                <br>
+                                <input id="subject" type="text" ng-model="mail.subject" ng-pattern="string" required ng-trim="false" ng-class "{'has-error' : contactform.subject.$invalid || !contactform.subject.$pristine }">
+                            </p>
+                            <p>Comments & Questions
+                                <textarea id="message" type="text" ng-model="mail.message" ng-pattern="string" required ng-trim="false" rows="5" cols="30" ng-class "{'has-error' : contactform.message.$invalid || !contactform.message.$pristine }">
+                                </textarea>
+                            </p>
+                            <input class="btn" type="submit" value="Send to Joy!" ng-disabled="userForm.$invalid"/>
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="contact-info">
+                    <span><i class="fa fa-phone"></i>&nbsp;(406) ???-????</span>
+                    <span><i class="fa fa-envelope"></i>&nbsp;<a href="mailto:joy@joynelson.com">joy@joynelson.com</a></span>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- Libraries -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -72,7 +106,18 @@
     <script src="js/ux.js"></script>
     <script src="js/jquery.modal.min.js"></script>
     <script src="js/scrollreveal.js"></script>
-    <script src="js/angular-fancy-modal.js"></script>
+    <script>
+    $('.fake-modal').hide();
+
+    var fakeModalOpen = function() {
+        $('.fake-modal').fadeIn();
+        $('.fake-modal').addClass('active');
+    };
+    $('.fake-modal .background').on('click',function(){
+        $('.fake-modal').fadeOut();
+    });
+       
+    </script>
 </body>
 
 </html>

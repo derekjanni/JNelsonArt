@@ -16,7 +16,7 @@ app.controller('SerieController', ['$scope', 'series', '$http', '$routeParams', 
          })
           .error(function(data) {
             return data;
-         });;
+         });
 		}
     
 	$scope.arts = $scope.get_arts();

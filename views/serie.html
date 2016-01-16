@@ -13,8 +13,11 @@
             <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
         </div>
     </div>
-    <div class="art-item" ng-repeat="art in arts | limitTo: 8">
-        <p>{{ art['data'].image }}</p>
-        <img ng-src="{{ art['data'].image }}">
+    
+    <div class="art-grid">
+        <div class="art-item" ng-repeat="art in arts | limitTo: 8">
+            <p>{{ art['data'].image }}</p>
+            <img ng-src="{{ art['data'].image }}">
+        </div>
     </div>
 </div>
