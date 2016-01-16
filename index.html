@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/jquery.modal.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!-- Include the core AngularJS library -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script>
     <!-- Include the AngularJS routing library -->
     <script src="//code.angularjs.org/1.3.5/angular-route.min.js"></script>
@@ -16,7 +17,7 @@
     <base href="/">
 </head>
 
-<body ng-app="GalleryApp">
+<body ng-app="GalleryApp" ng-controller="HomeController">
     <div class="wrapper">
         <div class="nav">
             <div class="container">
@@ -48,7 +49,7 @@
                     <a href="url"><i class="fa fa-2x fa-google-plus-square"></i></a>
                     <a href="url"><i class="fa fa-2x fa-behance"></i></a><a href="url"><i class="fa fa-2x fa-twitter-square"></i></a>
                     <a href="url"><i class="fa fa-2x fa-pinterest-square"></i></a>
-                    <a href="views/contact.html" ng-click="open()"><i class="fa fa-2x fa-envelope"></i></a>
+                    <a href ng-click="openModal()"><i class="fa fa-2x fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -56,7 +57,6 @@
         <div class="view fade" ng-view></div>
     </div>
     <!-- Libraries -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//code.angularjs.org/1.3.5/angular-animate.js"></script>
     <!-- Modules -->
     <script src="js/app.js"></script>
