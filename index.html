@@ -16,7 +16,7 @@
     <base href="/">
 </head>
 
-<body ng-app="GalleryApp">
+<body ng-app="GalleryApp" ng-controller="HomeController">
     <div class="wrapper">
         <div class="nav">
             <div class="container">
@@ -61,7 +61,6 @@
         <div class="fake-modal">
             <div class="background"></div>
             <div class="content">
-                <div controller="HomeController">
                     <div class="contact-form">
                         <h2>Send me an Email!</h2>
                         <form name="contactform" id="contactform" ng-submit="sendMail(mail)" novalidate>
@@ -79,11 +78,10 @@
                             </p>
                             <p>Comments & Questions
                                 <textarea id="message" type="text" ng-model="mail.message" ng-pattern="string" required ng-trim="false" rows="5" cols="30" ng-class "{'has-error' : contactform.message.$invalid || !contactform.message.$pristine }">
-                                </textarea>
+                            </textarea>
                             </p>
-                            <input class="btn" type="submit" value="Send to Joy!" ng-disabled="userForm.$invalid"/>
+                            <input class="btn" type="submit" value="Send to Joy!" ng-disabled="userForm.$invalid" onclick="resetForm()"/>
                         </form>
-                    </div>
                     <div class="clearfix"></div>
                 </div>
                 <div class="contact-info">
@@ -110,6 +108,7 @@
     <script src="js/ux.js"></script>
     <script src="js/jquery.modal.min.js"></script>
     <script src="js/scrollreveal.js"></script>
+    <!-- jQuery Custom Modal stuff-->    
     <script>
     $('.fake-modal').hide();
 
@@ -120,7 +119,6 @@
     $('.fake-modal .background').on('click',function(){
         $('.fake-modal').fadeOut();
     });
-       
     </script>
 </body>
 

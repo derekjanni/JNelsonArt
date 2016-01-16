@@ -7,13 +7,13 @@ var methodOverride = require('method-override');
 var http = require('http');
 var Client = require('node-rest-client').Client; 
 var nodemailer = require('nodemailer');
-var php = require('node-php');
+
 // MAIL CLIENT
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'derekjanni@gmail.com',
-        pass: '----'
+        pass: '---'
     }
 }, {
     // default values for sendMail method
@@ -118,5 +118,6 @@ app.get('*', function(req, res) {
 	res.send('index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
-app.listen(8080);
-console.log("App listening on port " + 8080);
+var port = process.env.PORT || 8080;
+app.listen(port);
+console.log("App listening on port " + port);
