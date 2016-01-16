@@ -60,17 +60,31 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   position: relative
   width: 45%
   margin: 5px auto
+.float-l
+  float: left
+.float-r
+  float: right
+.arrow
+  opacity: 1
+  width: 60px !important
+  -webkit-transition: -webkit-filter .4s
+  &:hover
+    -webkit-filter: invert(.3)
+    filter: invert(.3)
 .arrow-left
-  width: 60px
+  
   transform: rotate(180deg)
-
+.arrow-up
+  transform: rotate(270deg)
+.arrow-down
+  transform: rotate(90deg)
 .arrow-right
-
   width: 60px !important
   position: absolute !important
   bottom: 2%
   right: 5% 
   color: $creme
+
 
 //
 //
@@ -321,26 +335,31 @@ p.author
 
 .headshot
   position: relative
-  margin-left: 40px
-  margin-bottom: 10px
+  bottom: 0
+  left: 50%
+  transform: translate(-40%,0)
   border-radius: 3px
   .headshot-img
     width: 70%
+    &:hover~.headshot-caption
+      opacity: 1
   .headshot-arrow
     text-decoration: none
     position: absolute
     bottom: 10px
     right: 30%
-    color: $creme
     transition: all .5s
+    &:hover~.headshot-caption
+      opacity: 1
   .headshot-caption
-    display: inline
+    position: absolute
+    color: $creme
+    font-weight: 700
+    right: 65%
+    bottom: 0
     opacity: 0
     transition: all .5s
-  &:hover .headshot-arrow .headshot-caption
-    opacity: 1
-    margin: 0
-    float: left
+  
   +tablet
     display: none
 
@@ -364,6 +383,7 @@ p.author
 //  
 // BEGIN about
 .about  
+  padding: 40px 100px 100px 40px
   .container
     .about-image
       box-sizing: border-box
@@ -384,7 +404,7 @@ p.author
 //
 //
 .serie 
-  padding: 80px 100px 100px 40px
+  padding: 40px 100px 100px 40px
   width: 100%  
 
 .serie h2 
@@ -421,21 +441,22 @@ p.author
     &:hover .overlay
       opacity: 1
   .overlay
-    transition: opacity .2s
-    opacity: 0
-    position: absolute
-    max-width: 600px
-    max-height: 40vh
-    top: 0
-    width: 95%
-    height: 100%
-    object-fit: cover
-    border: 5px rgba(255,255,255,0) solid
-    -moz-border-radius: 3px
-    -webkit-border-radius: 3px
-    border-radius: 3px
-    margin: 5px
-    background: rgba(20,20,20,.3)
+    display: none
+    // transition: opacity .2s
+    // opacity: 0
+    // position: absolute
+    // max-width: 600px
+    // max-height: 40vh
+    // top: 0
+    // width: 95%
+    // height: 100%
+    // object-fit: cover
+    // border: 5px rgba(255,255,255,0) solid
+    // -moz-border-radius: 3px
+    // -webkit-border-radius: 3px
+    // border-radius: 3px
+    // margin: 5px
+    // background: rgba(20,20,20,.3)
 
 
 //
@@ -474,6 +495,7 @@ p.author
 //
 //
 .fake-modal
+  display: none
   .background
     position: absolute
     left: 0

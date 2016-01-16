@@ -1,15 +1,11 @@
-<head>
-    <meta charset="utf-8">
-</head>
 <div class="serie">
     <div class="container">
-        <a href="/"><img src="img/right-arrow.svg" class="arrow-left" alt=""></a>
-        <title class="serie-title"> {{ detail['data'].title }} </title>
+        <a href="/"><img src="img/right-arrow.svg" class="arrow arrow-left" alt=""></a>
         <h1 class="serie-title"> {{ detail['data'].title }} </h1>
         <img class="serie-masterimage white-border" ng-src="{{ detail['data'].image }}">
         <div class="serie-body-text">
             <p class="serie-artiststatement">{{ detail['data'].statement }} </p>
-            <p class="serie-views"> <b> price: </b> {{ detail['data'].price }} </p>
+            <p class="serie-views"> <b> price: </b> <span ng-bind-html="detail['data'].price | to_trusted"></span></p>
             <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
         </div>
     </div>
