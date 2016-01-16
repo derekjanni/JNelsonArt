@@ -3,21 +3,25 @@
 </head>
 <div class="serie">
     <div class="container">
-        <a href="/"><i class="fa fa-arrow-left fa-3x"></i></a>
+        <a href="/"><img src="img/right-arrow.svg" class="arrow-left" alt=""></a>
         <title class="serie-title"> {{ detail['data'].title }} </title>
         <h1 class="serie-title"> {{ detail['data'].title }} </h1>
         <img class="serie-masterimage white-border" ng-src="{{ detail['data'].image }}">
         <div class="serie-body-text">
-            <p class="serie-artiststatement"> <b> artist statement:  </b>{{ detail['data'].statement }} </p>
+            <p class="serie-artiststatement">{{ detail['data'].statement }} </p>
             <p class="serie-views"> <b> price: </b> {{ detail['data'].price }} </p>
             <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
         </div>
     </div>
-    
+
     <div class="art-grid">
-        <div class="art-item" ng-repeat="art in arts | limitTo: 8">
-            <p>{{ art['data'].image }}</p>
-            <img ng-src="{{ art['data'].image }}">
+        <div class="art-item" ng-repeat="art in arts">
+            <img class="white-border" ng-src="{{ art['data'].image }}">
+            <div class="overlay">
+                <h2>{{ art['data'].title }}</h2>
+                <p>{{ art['data'].description }}</p>
+            </div>
+            
         </div>
     </div>
 </div>

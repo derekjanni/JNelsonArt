@@ -21,7 +21,8 @@
         <div class="nav">
             <div class="container">
                 <a href="/">
-                    <img src="img/logo-vector.svg">
+                    <img src="img/logo-vector.svg" class="logo" alt="">
+                    <img src="img/artist_tagline.svg" class="tagline" alt="">
                 </a>
                 <div class="menu-icon">
                     <i class="fa fa-bars"></i>
@@ -35,7 +36,7 @@
             <div class="nav-bottom">
                 <div class="headshot">
                     <a href="/about">
-                        <img src="img/headshot.jpg" alt="" class="headshot-img white-border">
+                        <img src="img/headshot.jpg"alt="" class="headshot-img white-border">
                         <div class="headshot-arrow">
                             <h2 class="headshot-caption">about&nbsp;</h2>
                             <i class="fa fa-arrow-right fa-2x"></i>
@@ -46,16 +47,17 @@
                     <img src="img/divider.svg" class="nav-divider" alt="">
                 </div>
                 <div class="social-media">
-                    <a href="url"><i class="fa fa-2x fa-facebook-square"></i></a>
-                    <a href="url"><i class="fa fa-2x fa-google-plus-square"></i></a>
-                    <a href="url"><i class="fa fa-2x fa-behance"></i></a><a href="url"><i class="fa fa-2x fa-twitter-square"></i></a>
-                    <a href="url"><i class="fa fa-2x fa-pinterest-square"></i></a>
+                    <a href="https://www.facebook.com/joynelsonart/"><i class="fa fa-2x fa-facebook-square"></i></a>
+                    <a href="https://plus.google.com/100994778294264234535" target="_blank"><i class="fa fa-2x fa-google-plus-square"></i></a>
+                    <a href="https://www.behance.net/joynelsonart" target="_blank"><i class="fa fa-2x fa-behance"></i></a>
+
+                    
                     <a href="#" onclick="fakeModalOpen()"><i class="fa fa-2x fa-envelope"></i></a>
                 </div>
             </div>
         </div>
         <div class="nav-curve"></div>
-        <div class="view fade" ng-view></div>\
+        <div class="view fade" ng-view></div>
         <div class="fake-modal">
             <div class="background"></div>
             <div class="content">
@@ -102,6 +104,8 @@
     <script src="js/controllers/AboutController.js"></script>
     <!-- Services -->
     <script src="js/services/series.js"></script>
+    <!-- Filters -->
+    <script src="js/filters.filters.js"></script>
     <!-- jQuery UX stuff-->
     <script src="js/ux.js"></script>
     <script src="js/jquery.modal.min.js"></script>

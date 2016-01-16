@@ -1,14 +1,20 @@
-<html>
-<div>
-	
-<div class="serie ng-scope">
+<div class="about ng-scope">
     <div class="container">
-
-		<h1> About </h1>
-		<img class='serie-masterimage' ng-src= "{{ about['image'] }}">
-		<p> {{ about['about_text'] }}</p>
-		<p> {{ about[0]['about_text'] }}</p>
-	</div>
+        <img class='about-image white-border' ng-src="{{ about['image'] }}">
+        <!-- <p ng-bind="about['about_text']"></p> -->
+        <div class="about-text">
+            <h2>ABOUT</h2>
+            <p>
+                Originally from Southern Oregon, Joy received a Bachelor of Arts from the tight-knit and dedicated department of Art at Linfield College (McMinnville, OR) in 2010. In 2012, she moved to Whitefish, Montana.
+            </p>
+            <h2>A NOTE FROM THE ARTIST</h2>
+            <p>Painting is a constant exploration. With innovation and creative play as my tools, I search for balance. Through an organic, yet chaotic line and a full palette, I find harmony.</p>
+            <p>
+                I enjoy working in series, creating multiple pieces simultaneously. I often maintain an underlying connection within each group ranging from subject matter, to color palette, to perspective, or texture. Working in groups of paintings permits me to fully investigate a concept while allowing the idea to expand and grow. As a series, that concept is the connective thread, yet individually, each piece stands boldly.
+            </p>
+            <p>
+                At times I work within an abstract/non-concrete mentality, using fine lines, bold colors and transparent washes to articulate an idea. Other times I use a figurative/symbolic approach to communicate. Depending on the sentiment, setting, notion or mood, each painting determines it’s own route.
+            </p>
+        </div>
+    </div>
 </div>
-
-</html>
