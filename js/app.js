@@ -19,7 +19,7 @@ app.config(function ($routeProvider, $locationProvider) {
       templateUrl: 'views/about.html'
   })
     .otherwise({ 
-      redirectTo: '/' 
+      redirectTo: '/'
     }); 
     
     // use the HTML5 History API

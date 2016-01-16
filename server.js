@@ -23,7 +23,7 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-// API
+// API SETUP ---------------------------------------------------------------
 var express = require('express');
 var app = express();
 client = new Client();
@@ -34,8 +34,7 @@ app.use(bodyParser.json()); // parse application/json
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-Method-Override header in the request
 
-
-// api ---------------------------------------------------------------------
+// API ---------------------------------------------------------------------
 // get series
 app.get('/api/series', function(req, res) { 
 
@@ -113,9 +112,14 @@ app.post('/api/contact', function(req, res) {
 		res.send();
 });
 
-// application -------------------------------------------------------------
-app.get('*', function(req, res) {
-	res.send('index.html'); // load the single view file (angular will handle the page changes on the front-end)
+// APPLICATION -------------------------------------------------------------
+
+app.use('/js', express.static(__dirname + '/js'));
+app.use('/views', express.static(__dirname + '/views'));
+app.use('/css', express.static(__dirname + '/css'));
+
+app.get('/*', function(req, res, next) {
+    res.sendFile('index.html', { root: __dirname });
 });
 
 var port = process.env.PORT || 8080;
