@@ -1,4 +1,4 @@
-app.controller('HomeController', ['$scope', 'series', '$http', '$fancyModal', function($scope, series, $http, $fancyModal) {
+app.controller('HomeController', ['$scope', 'series', '$http', function($scope, series, $http) {
     series.success(function(data) {
 
         // main series display
@@ -27,17 +27,12 @@ app.controller('HomeController', ['$scope', 'series', '$http', '$fancyModal', fu
         $scope.about = $scope.get_about();
 
         // contact form mail handler
-        $scope.openModal = function () {
-            console.log("open modal hit");
-            $fancyModal.open({ templateUrl: '/views/contact.html' });
-        };
-
         $scope.sendMail = function(mail){
                 if ($scope.contactform.$valid) {
                         $http.post('api/contact', mail)
                         .success(function(data){})
                         .error(function(data){ console.log("error") });
-                    alert('Our form is amazing');
+                    document.getElementById("contactform").reset();
                 }
                 else{
                     alert('Fill out the form before you submit!');
@@ -45,6 +40,7 @@ app.controller('HomeController', ['$scope', 'series', '$http', '$fancyModal', fu
         }
         // contact form reset
         resetForm = function(){
+                console.log("hi");
         document.getElementById("contactform").reset();
     }
     });
