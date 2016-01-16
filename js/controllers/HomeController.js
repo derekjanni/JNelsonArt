@@ -40,8 +40,7 @@ app.controller('HomeController', ['$scope', 'series', '$http', function($scope, 
         }
         // contact form reset
         resetForm = function(){
-                console.log("hi");
-        document.getElementById("contactform").reset();
+            document.getElementById("contactform").reset();
     }
     });
 }]);

@@ -7,7 +7,7 @@ var methodOverride = require('method-override');
 var http = require('http');
 var Client = require('node-rest-client').Client; 
 var nodemailer = require('nodemailer');
-var php = require('node-php');
+
 // MAIL CLIENT
 var transporter = nodemailer.createTransport({
     service: 'gmail',
