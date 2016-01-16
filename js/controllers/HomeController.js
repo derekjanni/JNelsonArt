@@ -29,7 +29,7 @@ app.controller('HomeController', ['$scope', 'series', '$http', '$fancyModal', fu
         // contact form mail handler
         $scope.openModal = function () {
             console.log("open modal hit");
-            $fancyModal.open({ templateUrl: 'contact.html' });
+            $fancyModal.open({ templateUrl: '/views/contact.html' });
         };
 
         $scope.sendMail = function(mail){
