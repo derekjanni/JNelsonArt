@@ -50,9 +50,7 @@
                     <a href="https://www.facebook.com/joynelsonart/"><i class="fa fa-2x fa-facebook-square"></i></a>
                     <a href="https://plus.google.com/100994778294264234535" target="_blank"><i class="fa fa-2x fa-google-plus-square"></i></a>
                     <a href="https://www.behance.net/joynelsonart" target="_blank"><i class="fa fa-2x fa-behance"></i></a>
-
-                    
-                    <a href="#" onclick="fakeModalOpen()"><i class="fa fa-2x fa-envelope"></i></a>
+                    <a href="#" data-modal="fake-modal"><i class="fa fa-2x fa-envelope"></i></a>
                 </div>
             </div>
         </div>
@@ -109,17 +107,7 @@
     <script src="js/jquery.modal.min.js"></script>
     <script src="js/scrollreveal.js"></script>
     <!-- jQuery Custom Modal stuff-->    
-    <script>
-    $('.fake-modal').hide();
 
-    var fakeModalOpen = function() {
-        $('.fake-modal').fadeIn();
-        $('.fake-modal').addClass('active');
-    };
-    $('.fake-modal .background').on('click',function(){
-        $('.fake-modal').fadeOut();
-    });
-    </script>
 </body>
 
 </html>
