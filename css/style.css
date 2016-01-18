@@ -569,10 +569,11 @@ p.author {
   .contact-form input, .contact-form textarea {
     width: 100%; }
 
-.fake-modal {
-  display: none; }
-  .fake-modal .background {
-    position: absolute;
+.fake-modal, .fake-modal-art {
+  display: none;
+  overflow-y: scroll; }
+  .fake-modal .background, .fake-modal-art .background {
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -581,8 +582,8 @@ p.author {
     height: 100vh;
     background: rgba(10, 10, 10, 0.5);
     z-index: 100; }
-  .fake-modal .content {
-    position: absolute;
+  .fake-modal .content, .fake-modal-art .content {
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -592,5 +593,11 @@ p.author {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     z-index: 150; }
+    .fake-modal .content img, .fake-modal-art .content img {
+      height: 90vh;
+      width: 100%;
+      float: left; }
+    .fake-modal .content .text, .fake-modal-art .content .text {
+      float: right; }
 
 /*# sourceMappingURL=style.css.map */

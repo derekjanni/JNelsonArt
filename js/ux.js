@@ -33,26 +33,32 @@ $(document).ready(function() {
     // (used in about page and art grid)
     //
     //
-    $('.fake-modal').hide();
+    var fakeModal = $('.fake-modal').add('.fake-modal-art');
 
-    var fakeModalOpen = function() {
-        $('.fake-modal').fadeIn();
-        $('.fake-modal').addClass('active');
+    fakeModal.hide();
+
+    var fakeModalOpen = function(modalName) {
+        var modalName = '.' + modalName;
+        $(modalName).fadeIn();
     };
     var fakeModalClose = function() {
-        $('.fake-modal .background').on('click', function() {
-            $('.fake-modal').fadeOut();
+        fakeModal.find('.background').on('click', function() {
+            fakeModal.fadeOut();
         });
     };
-    var openModalTrigger = function() {
+    var fakeModalTrigger = function() {
         $('a').on('click', function() {
-            if ($(this).data('modal') === 'fake-modal') {
-                fakeModalOpen();
+            
+            var modalName = $(this).data('modal');
+
+            if (modalName) {
+                console.log(modalName);
+                fakeModalOpen(modalName);
             }
         });
     };
     
-    openModalTrigger();
+    fakeModalTrigger();
     fakeModalClose();
 
     //

@@ -9,15 +9,30 @@
             <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
         </div>
     </div>
-
     <div class="art-grid">
         <div class="art-item" ng-repeat="art in arts">
-            <img class="white-border" ng-src="{{ art['data'].image }}">
-            <div class="overlay">
-                <h2>{{ art['data'].title }}</h2>
-                <p>{{ art['data'].description }}</p>
+            <a href="#" ng-click="fakeModalTrigger('.fake-modal-art',$event)">
+                <img class="white-border" ng-src="{{ art['data'].image }}">
+                <div class="overlay">
+                    <h2>{{ art['data'].title }}</h2>
+                    <p>{{ art['data'].description | limitTo:140 }}</p>
+                </div>
+            </a>
+            <div class="fake-modal-art">
+                <div class="background"></div>
+                <div class="content">
+                    <img class="white-border" ng-src="{{ art['data'].image }}">
+                    <div class="text">
+                        <h2>{{ art['data'].title }}</h2>
+                        <p>{{ art['data'].description }}</p>
+                        <p>{{ art['data'].dimensions }}</p>
+                        <p>{{ art['data'].medium }}</p>
+                        <p>{{ art['data'].price }}</p>
+                        <p>{{ art['data'].year }}</p>
+                    </div>
+                </div>
             </div>
-            
         </div>
     </div>
 </div>
+<script src="js/ux.js"></script>
