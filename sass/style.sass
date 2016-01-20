@@ -137,6 +137,8 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover
   min-height: 100vh
   box-sizing: border-box
   padding: 0 70px
+  +tablet
+    padding: 0
 
 
 .top-border
@@ -264,6 +266,8 @@ p.author
   height: 100vh
   background: $periwinkle
   z-index: 100
+  +tablet
+    padding: 5px
   .logo
     width: 100%
   .tagline
@@ -310,6 +314,7 @@ p.author
     display: none
   +tablet
     display: block
+    margin-top: 20px
 .nav-bottom
   position: absolute
   bottom: 0
@@ -326,9 +331,11 @@ p.author
     font-size: 2.2em
     margin-right: .5em
   +tablet
-    width: 100%
+    position: absolute
+    width: 100vw
+    height: 1.75em
     left: 0
-    top: 10px
+    top: 0
     i
       font-size: 1.75em
 
@@ -384,6 +391,8 @@ p.author
 // BEGIN about
 .about  
   padding: 40px 100px 100px 40px
+  +tablet
+    padding: 10px
   .container
     .about-image
       box-sizing: border-box
@@ -393,9 +402,13 @@ p.author
       -moz-border-radius: 5px
       -webkit-border-radius: 5px
       border-radius: 5px
+      +tablet
+        width: 100%
     .about-text
       width: 65%
       float: right
+      +tablet
+        width: 90%
 //
 //  END about
 //  
@@ -406,23 +419,42 @@ p.author
 .serie 
   padding: 40px 100px 100px 40px
   width: 100%  
+  +tablet
+    padding: 60px 10px 10px 10px
+    box-sizing: border-box
 
-.serie h2 
+.serie-title 
   color: #000
   padding: 20px 108px
+  +tablet
+    width: 70%
+    margin-top: 0
+    padding: 0
+    float: right
+    text-align: right
+.serie .arrow-left
+  width: 30%
+  float: left
+  margin-top: 0
 
 .serie-body-text
   // width: 40%
-  
   color: #6f6f6f
   margin: 0
   padding: 0 5% 0
+  +tablet
+    clear: both
 
 .serie-masterimage 
   float: left
   width: 50%
   box-sizing: border-box
   margin-right: 20px
+  +tablet
+    position: relative
+    clear: both
+    margin: 0
+    width: 100%
 
 .art-grid
   clear: both
@@ -436,12 +468,17 @@ p.author
 .art-item
   width: 300px
   padding: 20px 20px 0 0
+  +tablet
+    position: relative
+    width: 90%
+    left: 5%
   img
     width: 100%
     &:hover .overlay
       opacity: 1
   .overlay
     display: none
+
     // transition: opacity .2s
     // opacity: 0
     // position: absolute
@@ -494,10 +531,11 @@ p.author
 //  BEGIN mail-modal
 //
 //
-.fake-modal
+.fake-modal, .fake-modal-art
   display: none
+  overflow-y: scroll
   .background
-    position: absolute
+    position: fixed
     left: 0
     right: 0
     top: 0
@@ -507,7 +545,7 @@ p.author
     background: rgba(10,10,10,.5)
     z-index: 100
   .content
-    position: absolute
+    position: fixed
     left: 50%
     top: 50%
     transform: translate(-50%,-50%)
@@ -517,4 +555,10 @@ p.author
     -webkit-border-radius: 5px   
     border-radius: 5px  
     z-index: 150 
+    img
+      height: 90vh
+      width: 100%
+      float: left
+    .text
+      float: right
     

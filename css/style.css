@@ -206,6 +206,9 @@ i[class^="fa-arrow-"]:hover, i[class*="fa-arrow-"]:hover {
   min-height: 100vh;
   box-sizing: border-box;
   padding: 0 70px; }
+  @media (max-width: 900px) {
+    .view {
+      padding: 0; } }
 
 .top-border {
   position: absolute;
@@ -322,6 +325,9 @@ p.author {
   height: 100vh;
   background: rgba(240, 247, 250, 0.7);
   z-index: 100; }
+  @media (max-width: 900px) {
+    .nav {
+      padding: 5px; } }
   .nav .logo {
     width: 100%; }
   .nav .tagline {
@@ -375,7 +381,8 @@ p.author {
       display: none; } }
   @media (max-width: 900px) {
     .menu-icon {
-      display: block; } }
+      display: block;
+      margin-top: 20px; } }
 
 .nav-bottom {
   position: absolute;
@@ -395,9 +402,11 @@ p.author {
     margin-right: 0.5em; }
   @media (max-width: 900px) {
     .social-media {
-      width: 100%;
+      position: absolute;
+      width: 100vw;
+      height: 1.75em;
       left: 0;
-      top: 10px; }
+      top: 0; }
       .social-media i {
         font-size: 1.75em; } }
 
@@ -449,6 +458,9 @@ p.author {
 
 .about {
   padding: 40px 100px 100px 40px; }
+  @media (max-width: 900px) {
+    .about {
+      padding: 10px; } }
   .about .container .about-image {
     box-sizing: border-box;
     width: 30%;
@@ -457,28 +469,59 @@ p.author {
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; }
+    @media (max-width: 900px) {
+      .about .container .about-image {
+        width: 100%; } }
   .about .container .about-text {
     width: 65%;
     float: right; }
+    @media (max-width: 900px) {
+      .about .container .about-text {
+        width: 90%; } }
 
 .serie {
   padding: 40px 100px 100px 40px;
   width: 100%; }
+  @media (max-width: 900px) {
+    .serie {
+      padding: 60px 10px 10px 10px;
+      box-sizing: border-box; } }
 
-.serie h2 {
+.serie-title {
   color: #000;
   padding: 20px 108px; }
+  @media (max-width: 900px) {
+    .serie-title {
+      width: 70%;
+      margin-top: 0;
+      padding: 0;
+      float: right;
+      text-align: right; } }
+
+.serie .arrow-left {
+  width: 30%;
+  float: left;
+  margin-top: 0; }
 
 .serie-body-text {
   color: #6f6f6f;
   margin: 0;
   padding: 0 5% 0; }
+  @media (max-width: 900px) {
+    .serie-body-text {
+      clear: both; } }
 
 .serie-masterimage {
   float: left;
   width: 50%;
   box-sizing: border-box;
   margin-right: 20px; }
+  @media (max-width: 900px) {
+    .serie-masterimage {
+      position: relative;
+      clear: both;
+      margin: 0;
+      width: 100%; } }
 
 .art-grid {
   clear: both;
@@ -492,6 +535,11 @@ p.author {
 .art-item {
   width: 300px;
   padding: 20px 20px 0 0; }
+  @media (max-width: 900px) {
+    .art-item {
+      position: relative;
+      width: 90%;
+      left: 5%; } }
   .art-item img {
     width: 100%; }
     .art-item img:hover .overlay {
@@ -521,10 +569,11 @@ p.author {
   .contact-form input, .contact-form textarea {
     width: 100%; }
 
-.fake-modal {
-  display: none; }
-  .fake-modal .background {
-    position: absolute;
+.fake-modal, .fake-modal-art {
+  display: none;
+  overflow-y: scroll; }
+  .fake-modal .background, .fake-modal-art .background {
+    position: fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -533,8 +582,8 @@ p.author {
     height: 100vh;
     background: rgba(10, 10, 10, 0.5);
     z-index: 100; }
-  .fake-modal .content {
-    position: absolute;
+  .fake-modal .content, .fake-modal-art .content {
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -544,5 +593,11 @@ p.author {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     z-index: 150; }
+    .fake-modal .content img, .fake-modal-art .content img {
+      height: 90vh;
+      width: 100%;
+      float: left; }
+    .fake-modal .content .text, .fake-modal-art .content .text {
+      float: right; }
 
 /*# sourceMappingURL=style.css.map */

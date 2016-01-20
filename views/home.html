@@ -12,8 +12,8 @@
     </div>
     <div class="series-see-more">
         <button ng-click="scroll()">
-            <i ng-if="seriesLength > feedLimit" class="fa fa-arrow-down"></i>
-            <i ng-if="seriesLength < feedLimit" class="fa fa-arrow-up"></i>
+            <a ng-if="seriesLength > feedLimit" href="/"><img src="img/right-arrow.svg" class="arrow arrow-down" alt=""></a>
+            <a ng-if="seriesLength < feedLimit" href="/"><img src="img/right-arrow.svg" class="arrow arrow-up" alt=""></a>
         </button>
     </div>
 </div>
