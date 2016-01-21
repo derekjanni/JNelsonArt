@@ -21,14 +21,16 @@
             <div class="fake-modal-art">
                 <div class="background"></div>
                 <div class="content">
-                    <img class="white-border" ng-src="{{ art['data'].image }}">
+                    <div class="image">
+                        <img class="white-border" ng-src="{{ art['data'].image }}">
+                    </div>
                     <div class="text">
-                        <h2>{{ art['data'].title }}</h2>
-                        <p>{{ art['data'].description }}</p>
-                        <p>{{ art['data'].dimensions }}</p>
-                        <p>{{ art['data'].medium }}</p>
-                        <p>{{ art['data'].price }}</p>
-                        <p>{{ art['data'].year }}</p>
+                        <h2 class="text--title">{{ art['data'].title }}</h2>
+                        <p class="text--dimensions">{{ art['data'].dimensions }}</p>
+                        <p class="text--medium">{{ art['data'].medium }}</p>
+                        <p class="text--price">{{ art['data'].price }}</p>
+                        <p class="text--year">{{ art['data'].year }}</p>
+                        <p class="text--description">{{ art['data'].description }}</p>
                     </div>
                 </div>
             </div>
