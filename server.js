@@ -9,6 +9,8 @@ var Client = require('node-rest-client').Client;
 var nodemailer = require('nodemailer');
 
 // MAIL CLIENT
+//var transporter = nodemailer.createTransport('smtps://joy%joynelson.com:pass@smtp.joynelson.com');
+
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {

@@ -26,13 +26,13 @@ $(document).ready(function() {
         });
     }
 
-
     //
     //
     // FAKE MODAL SECTION
     // (used in about page and art grid)
     //
     //
+
     var fakeModal = $('.fake-modal').add('.fake-modal-art');
 
     fakeModal.hide();
