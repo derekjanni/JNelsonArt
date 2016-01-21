@@ -507,7 +507,6 @@ p.author
 .row 
   height: auto
   padding-bottom: 10px
-  border-bottom: dotted #333 1px
 
 .contact-info
   display: flex
@@ -529,7 +528,7 @@ p.author
 //
 //  END contact
 //  
-//  BEGIN mail-modal
+//  BEGIN fake modal
 //
 //
 .fake-modal, .fake-modal-art
@@ -545,21 +544,63 @@ p.author
     height: 100vh
     background: rgba(10,10,10,.5)
     z-index: 100
+.fake-modal
   .content
     position: fixed
     left: 50%
     top: 50%
     transform: translate(-50%,-50%)
     width: 500px
-    background: #ffffff
+    background: $creme
     -moz-border-radius: 5px    
     -webkit-border-radius: 5px   
     border-radius: 5px  
     z-index: 150 
-    img
-      height: 90vh
-      width: 100%
+.fake-modal-art
+  +tablet
+    width: 100vw
+  .content
+    position: fixed
+    overflow-y: scroll
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    z-index: 150
+    width: 75vw
+    max-height: 96vh
+    transform: translate(-50%,-50%)
+    background: $creme
+    padding: 5px
+    margin: 2vh 0
+    -moz-border-radius: 5px    
+    -webkit-border-radius: 5px   
+    border-radius: 5px  
+    .image
+      width: 37vw
+      height: auto
       float: left
+      img
+        float: left
+        height: 100%
+        overflow-y: scroll
     .text
-      float: right
+      width: 35vw
+      float: left
+      margin-left: 2vw
+      &--dimensions,
+      &--medium,
+      &--price,
+      &--year,
+        margin: 0 0 0 1rem
+        color: $lightgray
+        font-size: .8rem
+      &--title
+        margin: 2rem 0 0 0
+        color: black
+        font-size: 1.5rem
+      &--description
+        margin: 2rem 0 0 0
+        font-size: 1rem
+
+
     

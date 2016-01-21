@@ -6,7 +6,8 @@ p,
 span {
   font-family: "Roboto Slab", sans-serif;
   font-weight: 300;
-  color: #111; }
+  color: #111;
+  font-size: 0.9rem; }
 
 h1,
 h2,
@@ -17,6 +18,18 @@ h6,
 button {
   font-family: "Libre Baskerville", sans-serif;
   font-weight: 300; }
+
+h1 {
+  font-size: 2rem; }
+
+h2 {
+  font-size: 1.8rem; }
+
+h3 {
+  font-size: 1.5rem; }
+
+h4 {
+  font-size: 1.3rem; }
 
 .nav:before {
   content: "";
@@ -549,8 +562,7 @@ p.author {
 
 .row {
   height: auto;
-  padding-bottom: 10px;
-  border-bottom: dotted #333 1px; }
+  padding-bottom: 10px; }
 
 .contact-info {
   display: flex;
@@ -582,22 +594,60 @@ p.author {
     height: 100vh;
     background: rgba(10, 10, 10, 0.5);
     z-index: 100; }
-  .fake-modal .content, .fake-modal-art .content {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 500px;
-    background: #ffffff;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    z-index: 150; }
-    .fake-modal .content img, .fake-modal-art .content img {
-      height: 90vh;
-      width: 100%;
-      float: left; }
-    .fake-modal .content .text, .fake-modal-art .content .text {
-      float: right; }
+
+.fake-modal .content {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  background: #fffdf8;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  z-index: 150; }
+
+@media (max-width: 900px) {
+  .fake-modal-art {
+    width: 100vw; } }
+.fake-modal-art .content {
+  position: fixed;
+  overflow-y: scroll;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 150;
+  width: 75vw;
+  max-height: 96vh;
+  transform: translate(-50%, -50%);
+  background: #fffdf8;
+  padding: 5px;
+  margin: 2vh 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+  .fake-modal-art .content .image {
+    width: 37vw;
+    height: auto;
+    float: left; }
+    .fake-modal-art .content .image img {
+      float: left;
+      height: 100%;
+      overflow-y: scroll; }
+  .fake-modal-art .content .text {
+    width: 35vw;
+    float: left;
+    margin-left: 2vw; }
+    .fake-modal-art .content .text--dimensions, .fake-modal-art .content .text--medium, .fake-modal-art .content .text--price, .fake-modal-art .content .text--year {
+      margin: 0 0 0 1rem;
+      color: #4d4d4d;
+      font-size: 0.8rem; }
+    .fake-modal-art .content .text--title {
+      margin: 2rem 0 0 0;
+      color: black;
+      font-size: 1.5rem; }
+    .fake-modal-art .content .text--description {
+      margin: 2rem 0 0 0;
+      font-size: 1rem; }
 
 /*# sourceMappingURL=style.css.map */
