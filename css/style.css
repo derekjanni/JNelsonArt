@@ -478,7 +478,7 @@ p.author {
     box-sizing: border-box;
     width: 30%;
     float: left;
-    margin: 10px;
+    margin: 20px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px; }
@@ -499,42 +499,41 @@ p.author {
     .serie {
       padding: 60px 10px 10px 10px;
       box-sizing: border-box; } }
-
-.serie-title {
-  color: #000;
-  padding: 20px 108px; }
-  @media (max-width: 900px) {
-    .serie-title {
-      width: 70%;
-      margin-top: 0;
-      padding: 0;
-      float: right;
-      text-align: right; } }
+  .serie--masterimage {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    margin-right: 1rem; }
+    @media (max-width: 900px) {
+      .serie--masterimage {
+        position: relative;
+        clear: both;
+        margin: 0;
+        width: 100%; } }
+  .serie--dimensions, .serie--medium, .serie--price, .serie--pubdate {
+    margin: 0;
+    transform: translate(2rem, 0);
+    color: #4d4d4d;
+    font-size: 0.8rem; }
+    .serie--dimensions span, .serie--medium span, .serie--price span, .serie--pubdate span {
+      color: inherit;
+      font-size: inherit; }
+  .serie--title {
+    margin: 0;
+    color: #000;
+    padding: 20px 108px;
+    font-size: 1.5rem; }
+    @media (max-width: 900px) {
+      .serie--title {
+        margin: 2rem 0 0 1rem; } }
+  .serie--description {
+    margin: 2rem 0 0 0;
+    font-size: 1rem; }
 
 .serie .arrow-left {
+  display: block;
   width: 30%;
-  float: left;
-  margin-top: 0; }
-
-.serie-body-text {
-  color: #6f6f6f;
-  margin: 0;
-  padding: 0 5% 0; }
-  @media (max-width: 900px) {
-    .serie-body-text {
-      clear: both; } }
-
-.serie-masterimage {
-  float: left;
-  width: 50%;
-  box-sizing: border-box;
-  margin-right: 20px; }
-  @media (max-width: 900px) {
-    .serie-masterimage {
-      position: relative;
-      clear: both;
-      margin: 0;
-      width: 100%; } }
+  margin: 0 0 2rem 0; }
 
 .art-grid {
   clear: both;
@@ -555,10 +554,6 @@ p.author {
       left: 5%; } }
   .art-item img {
     width: 100%; }
-    .art-item img:hover .overlay {
-      opacity: 1; }
-  .art-item .overlay {
-    display: none; }
 
 .row {
   height: auto;
@@ -576,6 +571,11 @@ p.author {
   left: 25%;
   right: 25%;
   display: block; }
+  @media (max-width: 900px) {
+    .contact-form {
+      width: 90%;
+      left: 5%;
+      margin-top: 3rem; } }
   .contact-form h2 {
     text-align: center; }
   .contact-form input, .contact-form textarea {
@@ -626,27 +626,41 @@ p.author {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px; }
+  @media (max-width: 900px) {
+    .fake-modal-art .content {
+      width: 90vw; } }
   .fake-modal-art .content .image {
-    width: 37vw;
+    width: 55vw;
     height: auto;
     float: left; }
+    @media (max-width: 900px) {
+      .fake-modal-art .content .image {
+        width: 60vw;
+        float: left; } }
     .fake-modal-art .content .image img {
       float: left;
       height: 100%;
       overflow-y: scroll; }
-  .fake-modal-art .content .text {
-    width: 35vw;
+  .fake-modal-art .content .text, .fake-modal-art .content .serie {
+    width: 15vw;
     float: left;
     margin-left: 2vw; }
-    .fake-modal-art .content .text--dimensions, .fake-modal-art .content .text--medium, .fake-modal-art .content .text--price, .fake-modal-art .content .text--year {
+    @media (max-width: 900px) {
+      .fake-modal-art .content .text, .fake-modal-art .content .serie {
+        width: 25vw;
+        margin-left: 0; } }
+    .fake-modal-art .content .text--dimensions, .fake-modal-art .content .text--medium, .fake-modal-art .content .text--price, .fake-modal-art .content .text--year, .fake-modal-art .content .serie--dimensions, .fake-modal-art .content .serie--medium, .fake-modal-art .content .serie--price, .fake-modal-art .content .serie--year {
       margin: 0 0 0 1rem;
       color: #4d4d4d;
       font-size: 0.8rem; }
-    .fake-modal-art .content .text--title {
+    .fake-modal-art .content .text--title, .fake-modal-art .content .serie--title {
       margin: 2rem 0 0 0;
       color: black;
       font-size: 1.5rem; }
-    .fake-modal-art .content .text--description {
+      @media (max-width: 900px) {
+        .fake-modal-art .content .text--title, .fake-modal-art .content .serie--title {
+          margin: 2rem 0 0 1rem; } }
+    .fake-modal-art .content .text--description, .fake-modal-art .content .serie--description {
       margin: 2rem 0 0 0;
       font-size: 1rem; }
 

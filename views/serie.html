@@ -1,22 +1,20 @@
 <div class="serie">
     <div class="container">
         <a href="/"><img src="img/right-arrow.svg" class="arrow arrow-left" alt=""></a>
-        <h1 class="serie-title"> {{ detail['data'].title }} </h1>
-        <img class="serie-masterimage white-border" ng-src="{{ detail['data'].image }}">
-        <div class="serie-body-text">
-            <p class="serie-artiststatement">{{ detail['data'].statement }} </p>
-            <p class="serie-views"> <b> price: </b> <span ng-bind-html="detail['data'].price | to_trusted"></span></p>
-            <p class="serie-pubdate"> <b> date: </b> {{ detail['data'].date }} </p>
+        <img class="serie--masterimage white-border" ng-src="{{ detail['data'].image }}">
+        <h1 class="serie--title"> {{ detail['data'].title }} </h1>
+        <div class="serie--body-text">
+            <p class="serie--pubdate"> {{ detail['data'].date }} </p>
+            <p class="serie--medium">{{ detail['data'].medium }}</p>
+            <p class="serie--dimensions">{{ detail['data'].dimensions }}</p>
+            <p class="serie--price"><span ng-bind-html="detail['data'].price | to_trusted"></span></p>
+            <p class="serie--artiststatement">{{ detail['data'].statement }} </p>          
         </div>
     </div>
     <div class="art-grid">
         <div class="art-item" ng-repeat="art in arts">
             <a href="#" ng-click="fakeModalTrigger('.fake-modal-art',$event)">
                 <img class="white-border" ng-src="{{ art['data'].image }}">
-                <div class="overlay">
-                    <h2>{{ art['data'].title }}</h2>
-                    <p>{{ art['data'].description | limitTo:140 }}</p>
-                </div>
             </a>
             <div class="fake-modal-art">
                 <div class="background"></div>
@@ -26,10 +24,10 @@
                     </div>
                     <div class="text">
                         <h2 class="text--title">{{ art['data'].title }}</h2>
-                        <p class="text--dimensions">{{ art['data'].dimensions }}</p>
-                        <p class="text--medium">{{ art['data'].medium }}</p>
-                        <p class="text--price">{{ art['data'].price }}</p>
                         <p class="text--year">{{ art['data'].year }}</p>
+                        <p class="text--medium">{{ art['data'].medium }}</p>
+                        <p class="text--dimensions">{{ art['data'].dimensions }}</p>
+                        <p class="text--price">{{ art['data'].price }}</p>
                         <p class="text--description">{{ art['data'].description }}</p>
                     </div>
                 </div>
