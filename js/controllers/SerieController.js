@@ -8,7 +8,7 @@ app.controller('SerieController', ['$scope', 'series', '$http', '$routeParams', 
             var output = [];
             for (i = 0; i < data.length; i++){ 
                 if($scope.detail['data'].title === data[i]['data'].series){
-              		data[i]['data']['image'] = data[i]['path'].replace('site:', 'http://joynelson.com/');
+              		data[i]['data']['image'] = data[i]['path'].replace('site:', 'http://cockpit.joynelson.com/');
                   output.push(data[i]);
               }	
 	         $scope.arts = output;

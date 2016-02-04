@@ -40,7 +40,7 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 // get series
 app.get('/api/series', function(req, res) { 
 
-	url = "http://www.joynelson.com/cockpit/rest/api/galleries/get/Series?token=25a01fb2eb534c8830882257"
+	url = "http://cockpit.joynelson.com/admin/rest/api/galleries/get/Series?token=25a01fb2eb534c8830882257"
 	http.get(url, function(resp){
 		var body = '';
 
@@ -63,7 +63,7 @@ app.get('/api/series', function(req, res) {
 // get arts
 app.get('/api/art', function(req, res) {
 
-	url = "http://www.joynelson.com/cockpit/rest/api/galleries/get/Art?token=25a01fb2eb534c8830882257"
+	url = "http://cockpit.joynelson.com/admin/rest/api/galleries/get/Art?token=25a01fb2eb534c8830882257"
 	http.get(url, function(resp){
 		var body = '';
 
@@ -83,7 +83,7 @@ app.get('/api/art', function(req, res) {
 
 // get about data
 app.get('/api/about', function(req, res) {
-	url = "http://www.joynelson.com/cockpit/rest/api/collections/get/about?token=25a01fb2eb534c8830882257"
+	url = "http://cockpit.joynelson.com/admin/rest/api/collections/get/about?token=25a01fb2eb534c8830882257"
 	http.get(url, function(resp){
 		var body = '';
 
