@@ -17,6 +17,7 @@ fs.readFile(fname, 'utf8', function(err, data) {
   pass = data
 });
 
+
 var transporter = {
     host: 'smtp.joynelson.com',
     port: 25,
