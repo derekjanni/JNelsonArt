@@ -11,15 +11,26 @@ var nodemailer = require('nodemailer');
 // MAIL CLIENT
 //var transporter = nodemailer.createTransport('smtps://joy%joynelson.com:pass@smtp.joynelson.com');
 
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
+var transporter = nodemailer.createTransport('SMTP', {
+    host: 'joynelson.com',
+    port: 25,
     auth: {
-        user: 'derekjanni@gmail.com',
-        pass: '---'
+        user: 'username',
+        pass: 'password'
     }
-}, {
+},
+
+// nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//         user: 'derekjanni@gmail.com',
+//         pass: '---'
+//     }
+// }, 
+
+{
     // default values for sendMail method
-    from: 'derekjanni@gmail.com',
+    from: 'me@joynelson.com',
     headers: {
         'Notice': 'Your Website is alive!'
     }
