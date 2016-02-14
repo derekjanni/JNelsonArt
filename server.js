@@ -18,7 +18,7 @@ fs.readFile(fname, 'utf8', function(err, data) {
 });
 
 
-var transporter = createTransport({
+var transporter = nodemailer.createTransport({
     host: 'smtps.joynelson.com',
     port: 25,
     secure: true, // use SSL
