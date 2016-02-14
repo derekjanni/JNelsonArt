@@ -18,7 +18,7 @@ fs.readFile(fname, 'utf8', function(err, data) {
 });
 
 
-var transporter = {
+var transporter = createTransport({
     host: 'smtps.joynelson.com',
     port: 25,
     secure: true, // use SSL
@@ -26,7 +26,7 @@ var transporter = {
         user: 'me@joynelson.com',
         pass: pass
     }
-};
+});
 
 // API SETUP ---------------------------------------------------------------
 var express = require('express');
