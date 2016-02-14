@@ -19,7 +19,7 @@ fs.readFile(fname, 'utf8', function(err, data) {
 
 
 var transporter = {
-    host: 'smtp.joynelson.com',
+    host: 'smtps.joynelson.com',
     port: 25,
     secure: true, // use SSL
     auth: {
