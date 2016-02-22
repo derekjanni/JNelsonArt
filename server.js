@@ -8,25 +8,26 @@ var http = require('http');
 var Client = require('node-rest-client').Client; 
 var nodemailer = require('nodemailer');
 
-// // MAIL CLIENT
-// var fs = require('fs')
-// var fname = 'passfile'
-// var pass = null
-// fs.readFile(fname, 'utf8', function(err, data) {
-//   if (err) throw err;
-//   pass = data
-// });
+// MAIL CLIENT
+var fs = require('fs')
+var fname = 'passfile'
+var pass = null
+fs.readFile(fname, 'utf8', function(err, data) {
+  if (err) throw err;
+  pass = data
+});
 
 
-// var transporter = {
-//     host: 'smtp.joynelson.com',
-//     port: 25,
-//     secure: true, // use SSL
-//     auth: {
-//         user: 'me@joynelson.com',
-//         pass: pass
-//     }
-// };
+var transporter = nodemailer.createTransport({
+    host: 'smtps.joynelson.com',
+    port: 25,
+    secure: true, // use SSL
+    auth: {
+        user: 'me@joynelson.com',
+        pass: pass
+    }
+});
+
 
 // API SETUP ---------------------------------------------------------------
 var express = require('express');
