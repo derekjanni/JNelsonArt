@@ -20,7 +20,7 @@ fs.readFile(fname, 'utf8', function(err, data) {
 
 var transporter = nodemailer.createTransport({
     host: 'mail.joynelson.com',
-    port: 465,
+    port: 25,
     secure: true, // use SSL
     auth: {
         user: 'me@joynelson.com',
