@@ -606,6 +606,9 @@ p.author {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   z-index: 150; }
+  @media (max-width: 900px) {
+    .fake-modal .content {
+      width: 90vw; } }
 
 @media (max-width: 900px) {
   .fake-modal-art {
