@@ -7,6 +7,7 @@ var methodOverride = require('method-override');
 var http = require('http');
 var Client = require('node-rest-client').Client; 
 var nodemailer = require('nodemailer');
+var smtpTransport = require("nodemailer-smtp-transport")
 
 // MAIL CLIENT
 var fs = require('fs')
@@ -18,15 +19,16 @@ fs.readFile(fname, 'utf8', function(err, data) {
 });
 
 
-var transporter = nodemailer.createTransport({
-    host: 'mail.joynelson.com',
+var transporter = nodemailer.createTransport(smtpTransport({
+    host : "mail.dreamhost.com",
+    secureConnection : true,
     port: 25,
-    secure: true, // use SSL
     auth: {
-        user: 'me@joynelson.com',
+        user: 'me',
         pass: pass
-    }
-});
+    	}
+	})
+);
 
 
 // API SETUP ---------------------------------------------------------------
@@ -110,11 +112,20 @@ app.get('/api/about', function(req, res) {
 app.post('/api/contact', function(req, res) {
 		data = req.body;
 		console.log(data);
-		transporter.sendMail({
-		    to: data.email,
+		var mailOptions = {
+		    from: data.email,
+		    to: 'me@joynelson.com',
 		    subject: data.subject,
-		    text: data.message + "\n\n Message Via Your Website From:" + data.name
+		    text: data.message + "\n\n Message Via Your Website From: " + data.name
+		};
+
+		transporter.sendMail(mailOptions, function(error, info){
+		    if(error){
+		        return console.log(error);
+		    }
+		    console.log('Message sent: ' + info.response);
 		});
+
 		res.send();
 });
 
